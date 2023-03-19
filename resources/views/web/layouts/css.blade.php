@@ -1,7 +1,6 @@
 <!-- plugins:css -->
         <link rel="shortcut icon" type="image/x-icon" href="{{url('web/img/favicon.ico')}}">    
 
-        
         <link rel="stylesheet" href="{{url('web/css/bootstrap.min.css')}}">
 
         <link href="{{ url('web/css/app.css') }}" rel="stylesheet">

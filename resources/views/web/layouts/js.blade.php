@@ -28,14 +28,14 @@
         <!-- Google Map JS -->
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPH8h1UpcK01BdcvoZeOzq-_wJqRxN1Pc"></script>
 		<!-- Main JS -->
-		<script src="{{url('js/main.js')}}"></script>
+		<script src="{{url('web/js/main.js')}}"></script>
         <script src="{{url('web/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}}"></script>
           <script defer src="{{ url('web/vendor/alpine.js') }}"></script>
 
     <script src="{{ url('web/stisla/js/modules/jquery.min.js') }}"></script>
+    
         <script defer async src="{{ url('web/stisla/js/modules/popper.js') }}"></script>
         <script defer async src="{{ url('web/stisla/js/modules/tooltip.js') }}"></script>
-        <script src="{{ url('web/stisla/js/modules/bootstrap.min.js') }}"></script>
         <script defer src="{{ url('web/stisla/js/modules/jquery.nicescroll.min.js') }}"></script>
         <script defer src="{{ url('web/stisla/js/modules/moment.min.js') }}"></script>
         <script defer src="{{ url('web/stisla/js/modules/marked.min.js') }}"></script>

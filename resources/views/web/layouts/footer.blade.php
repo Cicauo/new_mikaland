@@ -3,7 +3,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-sm-6 sm-padding">
                         <div class="widget-content">
-                            <a href="#"><img src="img/mikaland-logo.png" alt="brand"></a>
+                            <a href="#"><img src="{{url('web/img/mikaland-logo.png')}}" alt="brand"></a>
                             <p>PT. MIDA KARYA ABADI LAND fokus pada pembangunan perumahan dan real estate berkualitas, termasuk rumah sederhana, untuk masyarakat.</p>
                         </div>
                     </div>

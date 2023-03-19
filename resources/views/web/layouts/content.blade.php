@@ -13,10 +13,11 @@
 
         @include('web.layouts.css')
         @stack('css')
-        </head>
+    </head>
 
-        <body data-spy="scroll" data-target="#navmenu" data-offset="70">
-        {{-- @include('web.layouts.spinner') --}}
+    <body data-spy="scroll" data-target="#navmenu" data-offset="70">
+
+        @include('web.layouts.spinner')
 
         @include('web.layouts.header')
 
@@ -30,7 +31,7 @@
 
         @stack('js')
       
-        </body>
+    </body>
 </html>
 
         

@@ -664,7 +664,7 @@ ul.nav > li > a.active{
     margin-top: 40px;
 }
 .about-bg{
-    background-image: url(/img/head-office.png);
+    background-image: url(../img/head-office.png);
     background-position: top right;
     background-repeat: no-repeat;
     width: 100%;

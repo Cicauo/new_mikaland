@@ -1,7 +1,8 @@
 <!-- plugins:css -->
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="{{url('web/img/favicon.ico')}}">    
 
-        
+        <link rel="stylesheet" href="{{url('web/css/bootstrap.min.css')}}">
+
         <link href="{{ url('web/css/app.css') }}" rel="stylesheet">
 		<!-- Font Awesome CSS -->
         <link rel="stylesheet" href="{{url('web/css/fontawesome.min.css')}}">
@@ -16,7 +17,6 @@
         <!-- animate CSS -->
         <link rel="stylesheet" href="{{url('web/css/animate.min.css')}}">
 		<!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="{{url('web/css/bootstrap.min.css')}}">
         <!-- Slicknav CSS -->
         <link rel="stylesheet" href="{{url('web/css/slicknav.min.css')}}">
         <!--Slick Slider-->

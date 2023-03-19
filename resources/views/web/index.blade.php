@@ -4,7 +4,7 @@
 
         <div id="main-slider" class="dl-slider">
             <div class="single-slide">
-                <div class="bg-img kenburns-top-right" style="background-image: url('{{'web/img/fotoutama.jpg'}}');"></div>
+                <div class="bg-img kenburns-top-right" style="background-image: url('{{url('web/img/fotoutama.jpg')}}');"></div>
                 <div class="overlay"></div>
                 <div class="slider-content-wrap d-flex align-items-center text-left">
                     <div class="container">
@@ -25,7 +25,7 @@
                 </div>  
             </div><!--Slide-1-->
             <div class="single-slide">
-                <div class="bg-img kenburns-top-right" style="background-image: url(img/rajawali-utama.png);"></div>
+                <div class="bg-img kenburns-top-right" style="background-image: url('{{url('web/img/rajawali-utama.png')}}');"></div>
                 <div class="overlay"></div>
                 <div class="slider-content-wrap d-flex align-items-center text-left">
                     <div class="container">
@@ -46,7 +46,7 @@
                 </div>  
             </div><!--Slide-2-->
             <div class="single-slide">
-                <div class="bg-img kenburns-top-right" style="background-image: url(img/mega-pesona-utama.png);"></div>
+                <div class="bg-img kenburns-top-right" style="background-image: url('{{url('web/img/mega-pesona-utama.png')}}');"></div>
                 <div class="overlay"></div>
                 <div class="slider-content-wrap d-flex align-items-center text-left">
                     <div class="container">
@@ -74,7 +74,8 @@
                     <div class="col-md-6 xs-padding">
                         <div class="about-content">
                             <h2>Hunian modern dengan <br>kualitas hidup lebih baik.</h2>
-                            <p>PT. MIDA KARYA ABADI LAND, perusahaan properti yang berdedikasi untuk memberikan hunian berkualitas bagi masyarakat, dengan fokus pada pembangunan perumahan, termasuk rumah sederhana dan real estate</p>
+                            <p>PT. MIDA KARYA ABADI LAND, perusahaan properti yang berdedikasi untuk memberikan hunian berkualitas bagi masyarakat,
+                                 dengan fokus pada pembangunan perumahan, termasuk rumah sederhana dan real estate</p>
                             <p>Kami hadir sebagai solusi properti untuk perumahan berkualitas, termasuk rumah sederhana dan real estate yang memenuhi kebutuhan Anda.</p>
                             <a href="about-company" class="default-btn">More About Us</a>
                         </div>
@@ -150,36 +151,36 @@
                 </div><!--/.section-heading-->
                 <div id="projects-carousel" class="projects-carousel owl-carousel">
                     <div class="project-item">
-                        <img src="img/savana-home-primary-project.jpg" alt="projects">
+                        <img src="{{url('web/img/savana-home-primary-project.jpg')}}" alt="projects">
                         <div class="overlay"></div>
-                        <a href="img/savana-home-primary-project.jpg" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
+                        <a href="{{url('web/img/savana-home-primary-project.jpg')}}" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
                         <div class="projects-content">
                             <a href="savana-type-50" class="category">Cluster</a>
                             <h3><a href="savana-type-50" class="tittle">Savana Park Type 50/60</a></h3>
                         </div>
                     </div>
                     <div class="project-item">
-                        <img src="img/savana-home-secondary-projects-2.jpg" alt="projects">
+                        <img src="{{url('web/img/savana-home-secondary-projects-2.jpg')}}" alt="projects">
                         <div class="overlay"></div>
-                        <a href="img/savana-home-secondary-projects-2.jpg" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
+                        <a href="{{url('web/img/savana-home-secondary-projects-2.jpg')}}" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
                         <div class="projects-content">
                             <a href="savana-type-33" class="category">Cluster</a>
                             <h3><a href="savana-type-33" class="tittle">Savana Park Typer 33/60</a></h3>
                         </div>
                     </div>
                     <div class="project-item">
-                        <img src="img/rajawali36.jpg" alt="projects">
+                        <img src="{{url('web/img/rajawali36.jpg')}}" alt="projects">
                         <div class="overlay"></div>
-                        <a href="img/rajawali-type-36.jpg" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
+                        <a href="{{url('web/img/rajawali-type-36.jpg')}}" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
                         <div class="projects-content">
                             <a href="rajawal-type-36" class="category">Cluster</a>
                             <h3><a href="rajawali-type-36" class="tittle">Rajawali Type 36/72</a></h3>
                         </div>
                     </div>
                     <div class="project-item">
-                        <img src="img/pesona-33.jpg" alt="projects">
+                        <img src="{{url('web/img/pesona-33.jpg')}}" alt="projects">
                         <div class="overlay"></div>
-                        <a href="img/pesoa-33.jpg" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
+                        <a href="{{url('web/img/pesoa-33.jpg')}}" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
                         <div class="projects-content">
                             <a href="mega-pesona-type-33" class="category">Cluster</a>
                             <h3><a href="mega-pesona-type-33" class="tittle">Mega Pesona</a></h3>
@@ -200,7 +201,7 @@
                 </div><!--/.section-heading-->
                 <div id="testimonial-carousel" class="testimonial-carousel owl-carousel">
                     <div class="testi-item d-flex align-items-center">
-                        <img src="img/testi-1.png" alt="img">
+                        <img src="{{url('web/img/testi-1.png')}}" alt="img">
                         <div class="testi-content">
                             <p>"Akses strategis ..dkt jalan raya ... perkembangan ke tahun depan akan pasti majau"</p>
                             <h3>SBC Pagedangan</h3>
@@ -216,7 +217,7 @@
                         <i class="fa fa-quote-right"></i>
                     </div>
                     <div class="testi-item d-flex align-items-center">
-                        <img src="img/testi-2.png" alt="img">
+                        <img src="{{url('web/img/testi-2.png')}}" alt="img">
                         <div class="testi-content">
                             <p>"perumahan yg lumayan baru di munjul, lumayan strategis karena dekat dengan stasiun kereta"</p>
                             <h3>Saripin "Mang Ipin"</h3>
@@ -233,7 +234,7 @@
                         <i class="fa fa-quote-right"></i>
                     </div>
                      <div class="testi-item d-flex align-items-center">
-                        <img src="img/testi-4.png" alt="img">
+                        <img src="{{url('web/img/testi-4.png')}}" alt="img">
                         <div class="testi-content">
                             <p>"Kakak ipar saya tinggal disini.. Perumahnnya sih cukup bagus... Tapi jalanan untuk masuk ke komplek masih bebatuan.. Belum diaspal atau papingblok.. Tapi jalanan tiap depan rumah sudah bagus dan diaspal.. Katanya karena masih ada pembangunan.. Tempat bolak balik truk.."</p>
                             <h3>Ema MTV</h3>
@@ -250,7 +251,7 @@
                         <i class="fa fa-quote-right"></i>
                     </div>
                      <div class="testi-item d-flex align-items-center">
-                        <img src="img/testi-5.png" alt="img">
+                        <img src="{{url('web/img/testi-5.png')}}" alt="img">
                         <div class="testi-content">
                             <p>"Cluster idaman semua orang. Tempatnya rapi,  dekat dengan indomaret, dan alfamaret, deket toko bangunan, deket pemberhentian angkot, banyak tempat makan , klinik juga dekat. Masjid jami al falahiyah dekat juga. Sekurity nya ada, pengembangan tahap 2 masih belum lanjut.  Tahap 1 ada 43 unit. Nanti tahap 2 rencananya 70 unit. Hayo siapa yang mau beli"</p>
                             <h3>Jono Apri</h3>
@@ -267,7 +268,7 @@
                         <i class="fa fa-quote-right"></i>
                     </div>
                     <div class="testi-item d-flex align-items-center">
-                        <img src="img/testi-5.png" alt="img">
+                        <img src="{{url('web/img/testi-5.png')}}" alt="img">
                         <div class="testi-content">
                             <p>"Perum aman , cluster,  nyaman nib perumahan"</p>
                             <h3>Yosef</h3>
@@ -298,7 +299,7 @@
                     <div class="col-lg-4 col-sm-6 sm-padding">
                         <div class="blog-item">
                             <div class="blog-thumb">
-                                <img src="img/blogsrh1.png" alt="post">
+                                <img src="{{url('web/img/blogsrh1.png')}}" alt="post">
                                 <span class="category"><a href="#">Serah Terima</a></span>
                             </div>
                             <div class="blog-content">
@@ -311,7 +312,7 @@
                     <div class="col-lg-4 col-sm-6 sm-padding">
                         <div class="blog-item">
                             <div class="blog-thumb">
-                                <img src="img/blogsrh-4.png" alt="post">
+                                <img src="{{url('web/img/blogsrh-4.png')}}" alt="post">
                                 <span class="category"><a href="#">Pembangunan</a></span>
                             </div>
                             <div class="blog-content">
@@ -324,7 +325,7 @@
                     <div class="col-lg-4 col-sm-6 sm-padding">
                         <div class="blog-item">
                             <div class="blog-thumb">
-                                <img src="img/gate1.png" alt="post">
+                                <img src="{{url('web/img/gate1.png')}}" alt="post">
                                 <span class="category"><a href="#">Informasi</a></span>
                             </div>
                             <div class="blog-content">
@@ -343,22 +344,22 @@
             <div class="container">
                 <div id="sponsor-carousel" class="sponsor-carousel owl-carousel">
                     <div class="sponsor-item">
-                        <img src="img/logo-apersi.png" alt="sponsor">
+                        <img src="{{url('web/img/logo-apersi.png')}}" alt="sponsor">
                     </div>
                     <div class="sponsor-item">
-                        <img src="img/logo-pupr.png" alt="sponsor">
+                        <img src="{{url('web/img/logo-pupr.png')}}" alt="sponsor">
                     </div>
                     <div class="sponsor-item">
-                        <img src="img/logo-bank-bni.png" alt="sponsor">
+                        <img src="{{url('web/img/logo-bank-bni.png')}}" alt="sponsor">
                     </div>
                     <div class="sponsor-item">
-                        <img src="img/logo-bank-btn.png" alt="sponsor">
+                        <img src="{{url('web/img/logo-bank-btn.png')}}" alt="sponsor">
                     </div>
                     <div class="sponsor-item">
-                        <img src="img/logo-bank-bsi.png" alt="sponsor">
+                        <img src="{{url('web/img/logo-bank-bsi.png')}}" alt="sponsor">
                     </div>
                     <div class="sponsor-item">
-                        <img src="img/logo-bank-bri.png" alt="sponsor">
+                        <img src="{{url('web/img/logo-bank-bri.png')}}" alt="sponsor">
                     </div>
                     
                 </div>

@@ -1,11 +1,11 @@
 <header id="header" class="header-section">
     <div class="container">
         <nav class="navbar">
-            <a href="/" class="navbar-brand"><img src="{{url('web/img/mikaland-logo.png')}}" style="width: 200px; height: auto;" alt="Arkit"></a>
+            <a href="{{url('/')}}" class="navbar-brand"><img src="{{url('web/img/mikaland-logo.png')}}" style="width: 200px; height: auto;" alt="Arkit"></a>
             <div class="d-flex menu-wrap">
                 <div id="mainmenu" class="mainmenu">
                     <ul class="nav">
-                        <li><a data-scroll class="nav-link active" href="/">Home<span class="sr-only">(current)</span></a>
+                        <li><a data-scroll class="nav-link active" href="{{url('/')}}">Home<span class="sr-only">(current)</span></a>
 
                         </li>
                         <li><a href="about-company">About</a>

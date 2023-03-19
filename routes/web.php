@@ -19,6 +19,7 @@ use App\Http\Controllers\Cms\CmsMenusDetailController;
 use App\Http\Controllers\Cms\CmsEmailsController;
 use App\Http\Controllers\Cms\CmsDocumentController;
 use App\Http\Controllers\Cms\CmsManagementUsersController;
+use App\Http\Controllers\Admin\HomeController;
 
 // MANAGEMENT CLASS
 
@@ -32,6 +33,7 @@ use App\Http\Controllers\Cms\CmsManagementUsersController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::middleware(['web'])->group(function () {
 
     Route::group(['middleware' => ['auth']], function () {
@@ -161,7 +163,8 @@ Route::middleware(['web'])->group(function () {
 
     });
 
-    Route::get('/',[GuestController::class, 'welcome'])->name('welcome');
+    // Frontend
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 });

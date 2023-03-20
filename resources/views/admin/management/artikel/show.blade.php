@@ -3,7 +3,7 @@
 
 <div class="row mb-3">
     <div class="col-sm-12">
-      <a href="{{url('admin/project_content/'.$row->project_id)}}"><i class="mdi mdi-chevron-left"></i> back to menu</a>
+      <a href="{{url('admin/artikel/')}}"><i class="mdi mdi-chevron-left"></i> back to menu</a>
     </div>
   </div>
 
@@ -17,9 +17,9 @@
               <div class="table-responsive">
                 <table class="table table-borderless">
                     <tr>
-                        <td>projects</td>
+                        <td>users</td>
                         <td>:</td>
-                        <td>{{$row->projects}}</td>
+                        <td>{{$row->users}}</td>
                     </tr>
                     <tr>
                         <td>title</td>
@@ -27,9 +27,9 @@
                         <td>{{$row->title}}</td>
                     </tr>
                     <tr>
-                        <td>subtitle</td>
+                        <td>category</td>
                         <td>:</td>
-                        <td>{{$row->subtitle}}</td>
+                        <td>{{$row->category}}</td>
                     </tr>
                     <tr>
                         <td>content</td>
@@ -51,22 +51,13 @@
                         <td>:</td>
                         <td>{{$row->type}}</td>
                     </tr>
-
-                    @if($row->image)
-                        <tr>
-                            <td>type</td>
-                            <td>:</td>
-                            <td><img src="{{url('storage/'.$row->image)}}" width="200px" alt=""></td>
-                        </tr>
-                    @endif
-                    
                 </table>
               </div>
 
               <hr>
                 <div class="row mt-20">
                   <div class="col-sm-12">
-                      <a class="btn btn-success" href="{{url('admin/project_content/'.$row->project_id)}}">Back</a>
+                      <a class="btn btn-success" href="{{url('admin/artikel/')}}">Back</a>
                   </div>
                 </div>
 

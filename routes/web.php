@@ -68,6 +68,15 @@ Route::middleware(['web'])->group(function () {
 
         Route::group(['prefix' => 'admin','middleware' => ['admin']], function () {
 
+            //artikel
+            Route::get('artikel',[ArtikelController::class, 'index']);
+            Route::get('artikel/create',[ArtikelController::class, 'create']);
+            Route::get('artikel/show/{id}',[ArtikelController::class, 'show']);
+            Route::get('artikel/edit/{id}',[ArtikelController::class, 'edit']);
+            Route::get('artikel/destroy/{id}',[ArtikelController::class, 'destroy']);
+            Route::post('artikel/store',[ArtikelController::class, 'store']);
+            Route::post('artikel/update',[ArtikelController::class, 'update']);   
+
             //artikel category
             Route::get('artikel_category',[ArtikelCategoryController::class, 'index']);
             Route::get('artikel_category/create',[ArtikelCategoryController::class, 'create']);

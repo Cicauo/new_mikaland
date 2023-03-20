@@ -33,27 +33,27 @@ class Projects extends Model
         */
         public function getKeyType()
         {
-        return 'string';
+            return 'string';
         }
 
         public static function listData(){
-        $data = Projects::orderBy('created_at','desc')->get();
-        
-        return $data;
+            $data = Projects::orderBy('created_at','desc')->get();
+            
+            return $data;
         }
 
-         public static function insertData($request){
+        public static function insertData($request){
 
 
-        $slug = Helper::slug($request->name);
+            $slug = Helper::slug($request->name);
 
-        $data = Projects::create([
-        'id' => (string) Str::uuid(),
-        'name' => $request->name,
-        'slug' => $slug,
-        ]);
-        
-        return $data;
+            $data = Projects::create([
+            'id' => (string) Str::uuid(),
+            'name' => $request->name,
+            'slug' => $slug,
+            ]);
+            
+            return $data;
         }
 
         public static function updateData($request){

@@ -28,6 +28,7 @@ use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ArtikelCategoryController;
 use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\HomeTypeController;
+use App\Http\Controllers\Admin\HomeContentController;
 
 
 // MANAGEMENT CLASS
@@ -69,6 +70,12 @@ Route::middleware(['web'])->group(function () {
         Route::post('logout',[AuthController::class, 'logout']);   
 
         Route::group(['prefix' => 'admin','middleware' => ['admin']], function () {
+
+            //home content
+            Route::get('home_content/{type}/{id}',[HomeContentController::class, 'index']);
+            Route::get('home_content/destroy/{id}',[HomeContentController::class, 'destroy']);
+            Route::post('home_content/store',[HomeContentController::class, 'store']);
+            Route::post('home_content/update',[HomeContentController::class, 'update']);  
 
             //home type
             Route::get('home_type',[HomeTypeController::class, 'index']);

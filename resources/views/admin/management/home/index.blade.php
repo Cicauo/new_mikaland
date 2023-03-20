@@ -28,6 +28,7 @@
                 <th>projects</th>
                 <th>image</th>
                 <th>created_at</th>
+                <th>content</th>
                 <th>action</th>
               </tr>
             </thead>
@@ -46,6 +47,9 @@
                   @endif
               </td>
                 <td>{{$key->created_at}}</td>
+                <td>
+                  <a href="{{url('admin/home_content/description/'.$key->id)}}" class="btn btn-sm btn-success">Content</a>
+                </td>
                 <td>
                   <a href="{{url('admin/home_type/show/'.$key->id)}}" class="btn btn-sm btn-primary">detail</a>
                   <a href="{{url('admin/home_type/edit/'.$key->id)}}" class="btn btn-sm btn-warning">edit</a>

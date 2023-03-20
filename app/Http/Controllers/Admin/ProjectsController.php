@@ -25,7 +25,6 @@ class ProjectsController extends Controller
             
         $data = Self::init();
         $data['row'] = Projects::listData();
-        // dd($data);
         return view('admin.management.projects.index',$data);
     }
 

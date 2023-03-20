@@ -3,33 +3,29 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\ProjectContent;
-use App\Models\Projects;
 use Illuminate\Http\Request;
-use Storage;
+use App\Models\Customer;
 
-class ProjectContentController extends Controller
+class CustomerController extends Controller
 {
-
-    public static function init(){
-
-        $data['title'] = 'project content';
-        $data['link'] = 'projects';
-        
-        return $data;
-        }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public static function init(){
+
+        $data['title'] = 'customer';
+        $data['link'] = 'customer';
+        
+        return $data;
+    }
+
+    public function index()
     {
         $data = Self::init();
-        $data ['project_id'] = $id;
-        $data['parent'] = Projects::detailData($id);
-        $data['row'] = ProjectContent::listData($id);
-        return view('admin.management.project_content.index',$data);
+        $data['row'] = Customer::listData();
+        return view('admin.management.customer.index',$data);
     }
 
     /**
@@ -37,11 +33,9 @@ class ProjectContentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
-        $data = Self::init();
-        $data ['project_id'] = $id;
-        return view('admin.management.project_content.create',$data);
+        //
     }
 
     /**
@@ -53,16 +47,17 @@ class ProjectContentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            ]);
-            
-            $save = ProjectContent::insertData($request);
-            
-            if($save){
+            'name'                => 'required|string',
+            'image'               => 'required|file',
+        ]);
+
+        $save = Customer::insertData($request);
+
+        if($save){
             return redirect()->back()->with('message','success save data')->with('message_type','primary');
-            }else{
+        }else{
             return redirect()->back()->with('message','failed save data')->with('message_type','warning');
-            }
+        }
     }
 
     /**
@@ -73,10 +68,7 @@ class ProjectContentController extends Controller
      */
     public function show($id)
     {
-        $data = Self::init();
-        $data ['row'] = ProjectContent::detailData($id);
-        
-        return view('admin.management.project_content.show',$data);
+        //
     }
 
     /**
@@ -87,10 +79,7 @@ class ProjectContentController extends Controller
      */
     public function edit($id)
     {
-        $data = Self::init();
-        $data ['row'] = ProjectContent::detailData($id);
-        
-        return view('admin.management.project_content.edit',$data);
+        //
     }
 
     /**
@@ -103,17 +92,18 @@ class ProjectContentController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'id'    => 'required'
+            'id'                => 'required|string',
+            'name'                => 'required|string',
+            'image'               => 'required|file',
         ]);
-            
-            $update = ProjectContent::updateData($request);
-            
-            if($update){
+
+        $update = Customer::updateData($request);
+
+        if($update){
             return redirect()->back()->with('message','success update data')->with('message_type','primary');
-            }else{
+        }else{
             return redirect()->back()->with('message','failed update data')->with('message_type','warning');
-            }
+        }
     }
 
     /**
@@ -124,7 +114,7 @@ class ProjectContentController extends Controller
      */
     public function destroy($id)
     {
-        $delete = ProjectContent::deleteData($id);
+        $delete = Customer::deleteData($id);
 
         if($delete){
             return redirect()->back()->with('message','success delete data')->with('message_type','primary');

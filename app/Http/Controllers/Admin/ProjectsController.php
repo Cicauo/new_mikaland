@@ -14,7 +14,7 @@ class ProjectsController extends Controller
         $data['link'] = 'projects';
         
         return $data;
-        }
+    }
     /**
      * Display a listing of the resource.
      *

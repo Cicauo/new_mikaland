@@ -24,6 +24,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\Admin\ProjectContentController;
+use App\Http\Controllers\Admin\CustomerController;
 
 // MANAGEMENT CLASS
 
@@ -65,6 +66,15 @@ Route::middleware(['web'])->group(function () {
 
         Route::group(['prefix' => 'admin','middleware' => ['admin']], function () {
 
+            //customer
+            Route::get('customer',[CustomerController::class, 'index']);
+            Route::get('customer/create',[CustomerController::class, 'create']);
+            Route::get('customer/show/{id}',[CustomerController::class, 'show']);
+            Route::get('customer/edit/{id}',[CustomerController::class, 'edit']);
+            Route::get('customer/destroy/{id}',[CustomerController::class, 'destroy']);
+            Route::post('customer/store',[CustomerController::class, 'store']);
+            Route::post('customer/update',[CustomerController::class, 'update']);    
+
             // Route Projects 
             Route::get('projects',[ProjectsController::class, 'index']);
             Route::get('projects/create',[ProjectsController::class, 'create']);
@@ -82,7 +92,6 @@ Route::middleware(['web'])->group(function () {
             Route::get('project_content/destroy/{id}',[ProjectContentController::class, 'destroy']);
             Route::post('project_content/store',[ProjectContentController::class, 'store']);
             Route::post('project_content/update',[ProjectContentController::class, 'update']);    
-
 
             Route::get('role',[RoleController::class, 'index'])->name('role');
             Route::get('role/create',[RoleController::class, 'create'])->name('role-create');

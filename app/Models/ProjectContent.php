@@ -25,9 +25,8 @@ class ProjectContent extends Model
         'link',
         ];
 
-        public function getIncrementing()
-        {
-                return false;
+        public function getIncrementing(){
+            return false;
         }
         
                 /**
@@ -35,12 +34,11 @@ class ProjectContent extends Model
                 *
                 * @return string
                 */
-                public function getKeyType()
-                {
-                return 'string';
-                }
+        public function getKeyType(){
+            return 'string';
+        }
         
-                public static function listData($id){
+            public static function listData($id){
                 $data = ProjectContent::join('projects','projects_content.project_id','=','projects.id')
                 ->where('projects.id',$id)
                 ->select('projects.name as projects','projects_content.*')
@@ -48,7 +46,7 @@ class ProjectContent extends Model
                 ->get();
                 
                 return $data;
-                }
+            }
         
                  public static function insertData($request){
         

@@ -11,10 +11,18 @@
         </li>
 
         <li class="nav-item nav-category">Menu</li>
+        
          <li class="nav-item @if($link=='projects') active @endif">
           <a class="nav-link" href="{{url('admin/projects')}}">
             <i class="menu-icon mdi  mdi-view-dashboard"></i>
             <span class="menu-title">Projects</span>
+          </a>
+        </li>
+
+         <li class="nav-item @if($link=='customer') active @endif">
+          <a class="nav-link" href="{{url('admin/customer')}}">
+            <i class="menu-icon mdi  mdi-view-dashboard"></i>
+            <span class="menu-title">customer</span>
           </a>
         </li>
 

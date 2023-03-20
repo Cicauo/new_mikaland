@@ -26,6 +26,13 @@
           </a>
         </li>
 
+        <li class="nav-item @if($link=='contact') active @endif">
+          <a class="nav-link" href="{{url('admin/contact')}}">
+            <i class="menu-icon mdi  mdi-view-dashboard"></i>
+            <span class="menu-title">contact</span>
+          </a>
+        </li>
+
         <li class="nav-item nav-category">Artikel</li>
 
         <li class="nav-item @if($link=='artikel') active @endif">

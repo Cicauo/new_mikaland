@@ -28,6 +28,7 @@ use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ArtikelCategoryController;
 use App\Http\Controllers\Admin\ArtikelController;
 
+
 // MANAGEMENT CLASS
 
 /*
@@ -67,6 +68,9 @@ Route::middleware(['web'])->group(function () {
         Route::post('logout',[AuthController::class, 'logout']);   
 
         Route::group(['prefix' => 'admin','middleware' => ['admin']], function () {
+            //contact
+            Route::get('contact',[ContactController::class, 'index']);
+            Route::get('contact/destroy/{id}',[ContactController::class, 'destroy']);
 
             //artikel
             Route::get('artikel',[ArtikelController::class, 'index']);

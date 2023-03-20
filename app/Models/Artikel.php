@@ -40,6 +40,16 @@ class Artikel extends Model
         return 'string';
     }
 
+    public static function listDataPaginate(){
+        $data = Artikel::join('users','artikel.users_id','=','users.id')
+                ->join('artikel_category','artikel.artikel_category_id','artikel_category.id')
+                ->select('artikel.*','artikel_category.category','users.name as users')
+                ->orderBy('artikel.created_at','desc')
+                ->paginate(10);
+        
+        return $data;
+    }
+
     public static function listData(){
         $data = Artikel::join('users','artikel.users_id','=','users.id')
                 ->join('artikel_category','artikel.artikel_category_id','artikel_category.id')

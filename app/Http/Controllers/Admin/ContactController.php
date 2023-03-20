@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
@@ -12,9 +13,19 @@ class ContactController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public static function init(){
+
+        $data['title'] = 'contact';
+        $data['link'] = 'contact';
+        
+        return $data;
+    }
+
     public function index()
     {
-        return view('web.contact');
+        $data           = Self::init();
+        $data['row']    = Contact::listData();
+        return view('admin.management.contact.index',$data);
     }
 
     /**
@@ -80,6 +91,12 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = Contact::deleteData($id);
+
+        if($delete){
+            return redirect()->back()->with('message','success delete data')->with('message_type','primary');
+        }else{
+            return redirect()->back()->with('message','failed delete data')->with('message_type','warning');
+        }
     }
 }

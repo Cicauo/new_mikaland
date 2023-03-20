@@ -22,6 +22,11 @@
                         <td>{{$row->users}}</td>
                     </tr>
                     <tr>
+                      <td>slug</td>
+                      <td>:</td>
+                      <td>{{$row->slug}}</td>
+                    </tr>
+                    <tr>
                         <td>title</td>
                         <td>:</td>
                         <td>{{$row->title}}</td>
@@ -37,20 +42,19 @@
                         <td>@php echo $row->content; @endphp</td>
                     </tr>
                     <tr>
-                        <td>link</td>
-                        <td>:</td>
-                        <td>{{$row->link}}</td>
-                    </tr>
-                    <tr>
-                        <td>icon</td>
-                        <td>:</td>
-                        <td>{{$row->icon}}</td>
-                    </tr>
-                    <tr>
                         <td>type</td>
                         <td>:</td>
                         <td>{{$row->type}}</td>
                     </tr>
+
+                    @if($row->image)
+                        <tr>
+                            <td>image</td>
+                            <td>:</td>
+                            <td><img src="{{url('storage/'.$row->image)}}" width="200px" alt=""></td>
+                        </tr>
+                    @endif
+
                 </table>
               </div>
 

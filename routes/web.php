@@ -20,6 +20,8 @@ use App\Http\Controllers\Cms\CmsEmailsController;
 use App\Http\Controllers\Cms\CmsDocumentController;
 use App\Http\Controllers\Cms\CmsManagementUsersController;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\ContactController;
 
 // MANAGEMENT CLASS
 
@@ -165,6 +167,12 @@ Route::middleware(['web'])->group(function () {
 
     // Frontend
     Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::get('/about-company', [AboutController::class, 'index'])->name('about');
+
+    //contact
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+
 
 
 });

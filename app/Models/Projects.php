@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Helper;
 
-
 class Projects extends Model
 {
 
@@ -19,7 +18,7 @@ class Projects extends Model
         'id',
         'name',
         'slug'
-        ];
+    ];
 
         public function getIncrementing()
         {
@@ -48,9 +47,9 @@ class Projects extends Model
             $slug = Helper::slug($request->name);
 
             $data = Projects::create([
-            'id' => (string) Str::uuid(),
-            'name' => $request->name,
-            'slug' => $slug,
+                'id' => (string) Str::uuid(),
+                'name' => $request->name,
+                'slug' => $slug,
             ]);
             
             return $data;

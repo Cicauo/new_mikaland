@@ -1,6 +1,13 @@
 @extends('template.content')
 @section('content')
 
+<div class="row mb-3">
+  <div class="col-sm-12">
+    <a href="{{url('admin/projects')}}"><i class="mdi mdi-chevron-left"></i> back to menu</a>
+  </div>
+</div>
+
+
 <div class="mb-3">
   <nav class="navbar navbar-example navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid" style="justify-content: start">

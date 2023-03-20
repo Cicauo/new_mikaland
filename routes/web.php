@@ -22,6 +22,7 @@ use App\Http\Controllers\Cms\CmsManagementUsersController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\ProjectsController;
 
 // MANAGEMENT CLASS
 
@@ -62,6 +63,17 @@ Route::middleware(['web'])->group(function () {
         Route::post('logout',[AuthController::class, 'logout']);   
 
         Route::group(['prefix' => 'admin','middleware' => ['admin']], function () {
+
+            // Route Projects 
+            Route::get('projects',[ProjectsController::class, 'index']);
+            Route::get('projects/create',[ProjectsController::class, 'create']);
+            Route::get('projects/show/{id}',[ProjectsController::class, 'show']);
+            Route::get('projects/edit/{id}',[ProjectsController::class, 'edit']);
+            Route::get('projects/destroy/{id}',[ProjectsController::class, 'destroy']);
+            Route::post('projects/store',[ProjectsController::class, 'store']);
+            Route::post('projects/update',[ProjectsController::class, 'update']);
+            Route::post('projects/action/{slug}/{id}',[ProjectsController::class, 'action']);     
+
 
             Route::get('role',[RoleController::class, 'index'])->name('role');
             Route::get('role/create',[RoleController::class, 'create'])->name('role-create');

@@ -12,6 +12,12 @@ use Nfs;
  
 class Helper {
 
+    public static function slug($name){
+    $slug = str_replace(" ","_",$name);
+
+    return $slug;
+    }
+
     public static function resizeImage($file,$folder){
         $image              = $file;
         $ext                = $file->extension();

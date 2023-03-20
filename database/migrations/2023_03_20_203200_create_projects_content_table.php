@@ -16,13 +16,13 @@ class CreateProjectsContentTable extends Migration
         Schema::create('projects_content', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('project_id');
-            $table->string('title')->nullable();
-            $table->string('subtitle')->nullable();
-            $table->string('image')->nullable();
+            $table->text('title')->nullable();
+            $table->text('subtitle')->nullable();
+            $table->text('image')->nullable();
             $table->text('content')->nullable();
-            $table->string('type')->nullable();
-            $table->string('icon')->nullable();
-            $table->string('link')->nullable();
+            $table->text('type')->nullable();
+            $table->text('icon')->nullable();
+            $table->text('link')->nullable();
             $table->timestamps();
         });
     }

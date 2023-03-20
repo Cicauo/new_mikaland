@@ -9,6 +9,22 @@
     </nav>
   </div>
 
+  <div class="mb-3">
+    <div class="card-body">
+      <div class="row">
+        <!-- List group Numbered -->
+        <div class="col-sm-12">
+          <div class="demo-inline-spacing mt-3">
+            <ul class="list-group">
+              <li class="list-group-item">Project : {{$parent->name}}</li>
+              <li class="list-group-item">Link    : {{$parent->slug}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <div class="row">
 
         <div class="col-sm-12">

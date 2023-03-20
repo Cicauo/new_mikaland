@@ -55,7 +55,9 @@ class ProjectContent extends Model
                     if($request->file('image')){
 
                         $image=Helper::image($request->file('image'),'projects');
-                        }
+                    }else{
+                        $image = '';
+                    }
         
                 $data = ProjectContent::create([
                 'id' => (string) Str::uuid(),
@@ -74,22 +76,27 @@ class ProjectContent extends Model
         
                 public static function updateData($request){
 
-                    $check=ProjectContenty::find($request->id);
+                    $check=ProjectContent::find($request->id);
 
                 if($check->image){
-                if($request->file('image')){
-                Storage::delete('public/'.$check->image);
+                    
+                    if($request->file('image')){
+                        Storage::delete('public/'.$check->image);
 
-                $image = Helper::image($request->file('image'),'projects');
-                }
+                        $image = Helper::image($request->file('image'),'projects');
+                    }else{
+                        $image = $check->image;
+                    }
                 }else{
-                if($request->file('image')){
 
-                    $image = Helper::image($request->file('image'),'projects');
-                }
+                    if($request->file('image')){
+
+                        $image = Helper::image($request->file('image'),'projects');
+                    }else{
+                        $image = $check->image;
+                    }
                 }
                     $data = ProjectContent::where('id',$request->id)->update([
-                        'id' => (string) Str::uuid(),
                         'project_id' => $request->project_id,
                         'title' => $request->title,
                         'subtitle' => $request->subtitle,

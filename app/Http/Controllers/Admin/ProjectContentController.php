@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\ProjectContent;
+use App\Models\Projects;
 use Illuminate\Http\Request;
 use Storage;
 
@@ -13,7 +14,7 @@ class ProjectContentController extends Controller
     public static function init(){
 
         $data['title'] = 'project content';
-        $data['link'] = 'project';
+        $data['link'] = 'projects';
         
         return $data;
         }
@@ -26,8 +27,8 @@ class ProjectContentController extends Controller
     {
         $data = Self::init();
         $data ['project_id'] = $id;
+        $data['parent'] = Projects::detailData($id);
         $data['row'] = ProjectContent::listData($id);
-        // dd($data);
         return view('admin.management.project_content.index',$data);
     }
 
@@ -40,7 +41,6 @@ class ProjectContentController extends Controller
     {
         $data = Self::init();
         $data ['project_id'] = $id;
-        // dd($data);
         return view('admin.management.project_content.create',$data);
     }
 
@@ -73,7 +73,10 @@ class ProjectContentController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Self::init();
+        $data ['row'] = ProjectContent::detailData($id);
+        
+        return view('admin.management.project_content.show',$data);
     }
 
     /**
@@ -84,7 +87,10 @@ class ProjectContentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Self::init();
+        $data ['row'] = ProjectContent::detailData($id);
+        
+        return view('admin.management.project_content.edit',$data);
     }
 
     /**
@@ -94,9 +100,20 @@ class ProjectContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'id'    => 'required'
+        ]);
+            
+            $update = ProjectContent::updateData($request);
+            
+            if($update){
+            return redirect()->back()->with('message','success update data')->with('message_type','primary');
+            }else{
+            return redirect()->back()->with('message','failed update data')->with('message_type','warning');
+            }
     }
 
     /**
@@ -107,6 +124,12 @@ class ProjectContentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = Projects::where('id',$id)->delete();
+
+        if($delete){
+            return redirect()->back()->with('message','success delete data')->with('message_type','primary');
+        }else{
+            return redirect()->back()->with('message','failed delete data')->with('message_type','warning');
+        }
     }
 }

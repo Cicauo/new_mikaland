@@ -25,6 +25,8 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ProjectsController;
 use App\Http\Controllers\Admin\ProjectContentController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\ArtikelCategoryController;
+use App\Http\Controllers\Admin\ArtikelController;
 
 // MANAGEMENT CLASS
 
@@ -65,6 +67,15 @@ Route::middleware(['web'])->group(function () {
         Route::post('logout',[AuthController::class, 'logout']);   
 
         Route::group(['prefix' => 'admin','middleware' => ['admin']], function () {
+
+            //artikel category
+            Route::get('artikel_category',[ArtikelCategoryController::class, 'index']);
+            Route::get('artikel_category/create',[ArtikelCategoryController::class, 'create']);
+            Route::get('artikel_category/show/{id}',[ArtikelCategoryController::class, 'show']);
+            Route::get('artikel_category/edit/{id}',[ArtikelCategoryController::class, 'edit']);
+            Route::get('artikel_category/destroy/{id}',[ArtikelCategoryController::class, 'destroy']);
+            Route::post('artikel_category/store',[ArtikelCategoryController::class, 'store']);
+            Route::post('artikel_category/update',[ArtikelCategoryController::class, 'update']);   
 
             //customer
             Route::get('customer',[CustomerController::class, 'index']);

@@ -22,9 +22,9 @@ class Projects extends Model
         ];
 
         public function getIncrementing()
-{
-        return false;
-}
+        {
+            return false;
+        }
 
         /**
         * Get the auto-incrementing key type.

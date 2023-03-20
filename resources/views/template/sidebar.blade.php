@@ -26,6 +26,22 @@
           </a>
         </li>
 
+        <li class="nav-item nav-category">Artikel</li>
+
+        <li class="nav-item @if($link=='artikel') active @endif">
+          <a class="nav-link" href="{{url('admin/artikel')}}">
+            <i class="menu-icon mdi  mdi-view-dashboard"></i>
+            <span class="menu-title">artikel</span>
+          </a>
+        </li>
+
+        <li class="nav-item @if($link=='artikel_category') active @endif">
+          <a class="nav-link" href="{{url('admin/artikel_category')}}">
+            <i class="menu-icon mdi  mdi-view-dashboard"></i>
+            <span class="menu-title">artikel category</span>
+          </a>
+        </li>
+
         {{-- SETTINGAN DARI CMS MENUS --}}
         @foreach (Nfs::menu(Session::get('id')) as $menu_access)
 

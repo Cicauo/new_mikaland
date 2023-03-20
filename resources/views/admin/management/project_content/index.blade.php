@@ -1,11 +1,10 @@
 @extends('template.content')
 @section('content')
 
-
 <div class="mb-3">
   <nav class="navbar navbar-example navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid" style="justify-content: start">
-        <a class="btn btn-primary btn-sm" href="{{url('admin/projects/create')}}"><i class='bx bx-plus'></i>&nbsp;add data</a>
+        <a class="btn btn-primary btn-sm" href="{{url('admin/project_content/create/'.$project_id)}}"><i class='bx bx-plus'></i>&nbsp;add data</a>
         </div>
     </nav>
   </div>
@@ -21,26 +20,32 @@
                       <table class="table table" id="tabel">
                         <thead>
                           <tr>
-                            <th>Name</th>
-                            <th>Slug</th>
-                            <th>Content</th>
+                            <th>Project ID</th>
+                            <th>title</th>
+                            <th>Type</th>
+                            <th>Image</th>
                             <th>Action</th>
                           </tr>
                         </thead>
                         <tbody>
-                        {{-- @php dd($row); @endphp --}}
                           @foreach($row as $key)
-                          
                           <tr>
-                            <td>{{$key->name}}</td>
-                            <td>{{$key->slug}}</td>
+                            <td>{{$key->projects}}</td>
+                            <td>{{$key->title}}</td>
+                            <td>{{$key->type}}</td>
                             <td>
-                              <a href="{{url('admin/project_content/'.$key->id)}}" class="btn btn-sm btn-success">Content</a>
+                                @if($key->image)
+                                <a data-fslightbox="gallery" href="{{url('storage/'.$key->image)}}">
+                                    <img src="{{url('storage/'.$key->image)}}" class="img-table" alt="{{$key->name}}">
+                                </a>
+                                @else
+                                    <p>no image</p>
+                                @endif
                             </td>
                             <td>
-                              <a href="{{url('admin/projects/show/'.$key->id)}}" class="btn btn-sm btn-primary">detail</a>
-                              <a href="{{url('admin/projects/edit/'.$key->id)}}" class="btn btn-sm btn-warning">edit</a>
-                              <a href="javascript:void(0)" onclick="hapus('{{url('admin/projects/destroy/'.$key->id)}}')" class="btn btn-sm btn-danger">delete</a>
+                              <a href="{{url('admin/project_content/show/'.$key->id)}}" class="btn btn-sm btn-primary">detail</a>
+                              <a href="{{url('admin/project_content/edit/'.$key->id)}}" class="btn btn-sm btn-warning">edit</a>
+                              <a href="javascript:void(0)" onclick="hapus('{{url('admin/project_content/destroy/'.$key->id)}}')" class="btn btn-sm btn-danger">delete</a>
                             </td>
                           </tr>
                           @endforeach
@@ -68,7 +73,6 @@
         });
     });
     </script>
-    
 @endpush
 
 @endsection

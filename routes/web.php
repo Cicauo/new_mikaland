@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ProjectsController;
+use App\Http\Controllers\Admin\ProjectContentController;
 
 // MANAGEMENT CLASS
 
@@ -71,8 +72,16 @@ Route::middleware(['web'])->group(function () {
             Route::get('projects/edit/{id}',[ProjectsController::class, 'edit']);
             Route::get('projects/destroy/{id}',[ProjectsController::class, 'destroy']);
             Route::post('projects/store',[ProjectsController::class, 'store']);
-            Route::post('projects/update',[ProjectsController::class, 'update']);
-            Route::post('projects/action/{slug}/{id}',[ProjectsController::class, 'action']);     
+            Route::post('projects/update',[ProjectsController::class, 'update']);  
+            
+            // Route Project_Content 
+            Route::get('project_content/{id}',[ProjectContentController::class, 'index']);
+            Route::get('project_content/create/{id}',[ProjectContentController::class, 'create']);
+            Route::get('project_content/show/{id}',[ProjectContentController::class, 'show']);
+            Route::get('project_content/edit/{id}',[ProjectContentController::class, 'edit']);
+            Route::get('project_content/destroy/{id}',[ProjectContentController::class, 'destroy']);
+            Route::post('project_content/store',[ProjectContentController::class, 'store']);
+            Route::post('project_content/update',[ProjectContentController::class, 'update']);    
 
 
             Route::get('role',[RoleController::class, 'index'])->name('role');

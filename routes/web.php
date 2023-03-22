@@ -73,8 +73,8 @@ Route::middleware(['web'])->group(function () {
         Route::group(['prefix' => 'admin','middleware' => ['admin']], function () {
 
             //content
-            Route::get('content/{type}',[ContentController::class, 'index']);
-            Route::get('content/create/{type}',[ContentController::class, 'create']);
+            Route::get('content/{position}',[ContentController::class, 'index']);
+            Route::get('content/create/{position}',[ContentController::class, 'create']);
             Route::get('content/show/{id}',[ContentController::class, 'show']);
             Route::get('content/edit/{id}',[ContentController::class, 'edit']);
             Route::get('content/destroy/{id}',[ContentController::class, 'destroy']);

@@ -13,7 +13,7 @@ class ContentController extends Controller
     public static function init(){
 
         $data['title'] = 'content';
-        $data['link'] = 'content';
+        $data['link']  = 'content';
         
         return $data;
         }
@@ -22,10 +22,11 @@ class ContentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($type)
+    public function index($position)
     {
         $data = Self::init();
-        $data['row'] = Content::listData($type);
+        $data['row'] = Content::listData($position);
+        $data['position'] = $position;
         return view('admin.management.content.index',$data);
     }
 
@@ -34,10 +35,10 @@ class ContentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($type)
+    public function create($position)
     {
         $data = Self::init();
-        $data['type'] = $type;
+        $data['position'] = $position;
         return view('admin.management.content.create',$data);
     }
 

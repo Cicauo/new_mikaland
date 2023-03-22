@@ -26,7 +26,7 @@
                 <div class="form-group">
 
                     <label for="value">{{Helper::uc('subtitle')}}</label>
-                    <input type="text" class="form-control" id="subtitle" name="subtitle" placeholder="subtile" value="{{$row->subtile}}">
+                    <input type="text" class="form-control" id="subtitle" name="subtitle" placeholder="subtile" value="{{$row->subtitle}}">
                   </div>
 
                    <div class="form-group">

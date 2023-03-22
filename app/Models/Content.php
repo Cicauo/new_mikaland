@@ -39,8 +39,8 @@ class Content extends Model
             return 'string';
         }
         
-            public static function listData($id){
-                $data = Content::orderBy('created_at','desc')->get();
+            public static function listData($position){
+                $data = Content::where('position',$position)->orderBy('created_at','desc')->get();
                 
                 return $data;
             }

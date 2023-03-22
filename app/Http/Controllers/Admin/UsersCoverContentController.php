@@ -26,6 +26,7 @@ class UsersCoverContentController extends Controller
     public function index($users_cover_id)
     {
         $data = Self::init();
+        $data['users_cover_id'] = $users_cover_id;
         $data['row'] = UsersCoverContent::listData($users_cover_id);
         return view('admin.management.users_cover_content.index',$data);
     }
@@ -50,7 +51,7 @@ class UsersCoverContentController extends Controller
     {
         $request->validate([
             'users_cover_id'  => 'required',
-            'sorter'  => 'required',
+            'sorter'  => 'required|unique:users_cover_content,sorter',
         ]);
             
         $save = UsersCoverContent::insertData($request);

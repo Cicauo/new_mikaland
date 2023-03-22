@@ -37,7 +37,7 @@ class UsersCoverContent extends Model
                     ->join('users','users_cover.users_id','=','users.id')
                     ->where('users_cover.id',$id)
                     ->select('users_cover.slug as slug','users.name as users','users_cover_content.*')
-                    ->orderBy('users_cover_content.created_at','desc')
+                    ->orderBy('users_cover_content.sorter','desc')
                     ->get();
             
             return $data;

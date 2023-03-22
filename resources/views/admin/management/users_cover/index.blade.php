@@ -25,6 +25,7 @@
                           <tr>
                             <th>users</th>
                             <th>slug</th>
+                            <th>content</th>
                             <th>Action</th>
                           </tr>
                         </thead>
@@ -33,6 +34,9 @@
                           <tr>
                             <td>{{$key->users}}</td>
                             <td>{{$key->slug}}</td>
+                            <td>
+                              <a href="{{url('admin/users_cover_content/'.$key->id)}}" class="btn btn-sm btn-success">Landing Page</a>
+                            </td>
                             <td>
                               <button type="button" class="btn btn-warning btn-sm" 
                                 data-bs-toggle="modal" data-bs-target="#edit{{$key->id}}">

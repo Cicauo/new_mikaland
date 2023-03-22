@@ -30,6 +30,8 @@ use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\HomeTypeController;
 use App\Http\Controllers\Admin\HomeContentController;
 use App\Http\Controllers\Admin\ContentController;
+use App\Http\Controllers\Admin\UsersCoverContentController;
+use App\Http\Controllers\Admin\UsersCoverController;
 
 
 // MANAGEMENT CLASS
@@ -71,6 +73,24 @@ Route::middleware(['web'])->group(function () {
         Route::post('logout',[AuthController::class, 'logout']);   
 
         Route::group(['prefix' => 'admin','middleware' => ['admin']], function () {
+
+            //users cover content
+            Route::get('users_cover_content/{users_cover_id}',[UsersCoverContentController::class, 'index']);
+            Route::get('users_cover_content/create/{users_cover_id}',[UsersCoverContentController::class, 'create']);
+            Route::get('users_cover_content/show/{id}',[UsersCoverContentController::class, 'show']);
+            Route::get('users_cover_content/edit/{id}',[UsersCoverContentController::class, 'edit']);
+            Route::get('users_cover_content/destroy/{id}',[UsersCoverContentController::class, 'destroy']);
+            Route::post('users_cover_content/store',[UsersCoverContentController::class, 'store']);
+            Route::post('users_cover_content/update',[UsersCoverContentController::class, 'update']);
+
+            //users cover
+            Route::get('users_cover',[UsersCoverController::class, 'index']);
+            Route::get('users_cover/create',[UsersCoverController::class, 'create']);
+            Route::get('users_cover/show/{id}',[UsersCoverController::class, 'show']);
+            Route::get('users_cover/edit/{id}',[UsersCoverController::class, 'edit']);
+            Route::get('users_cover/destroy/{id}',[UsersCoverController::class, 'destroy']);
+            Route::post('users_cover/store',[UsersCoverController::class, 'store']);
+            Route::post('users_cover/update',[UsersCoverController::class, 'update']);
 
             //content
             Route::get('content/{position}',[ContentController::class, 'index']);

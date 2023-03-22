@@ -57,19 +57,19 @@ class ProjectContent extends Model
                         $image = '';
                     }
         
-                $data = ProjectContent::create([
-                'id' => (string) Str::uuid(),
-                'project_id' => $request->project_id,
-                'title' => $request->title,
-                'subtitle' => $request->subtitle,
-                'image' => $image,
-                'content' => $request->content,
-                'type' => $request->type,
-                'icon' => $request->icon,
-                'link' => $request->link,
-                ]);
-                
-                return $data;
+                    $data = ProjectContent::create([
+                    'id' => (string) Str::uuid(),
+                    'project_id' => $request->project_id,
+                    'title' => $request->title,
+                    'subtitle' => $request->subtitle,
+                    'image' => $image,
+                    'content' => $request->content,
+                    'type' => $request->type,
+                    'icon' => $request->icon,
+                    'link' => $request->link,
+                    ]);
+                    
+                    return $data;
                 }
         
                 public static function updateData($request){

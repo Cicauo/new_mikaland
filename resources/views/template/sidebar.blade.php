@@ -12,6 +12,13 @@
 
         <li class="nav-item nav-category">Menu</li>
 
+        <li class="nav-item @if($link=='users_cover') active @endif">
+          <a class="nav-link" href="{{url('admin/users_cover')}}">
+            <i class="menu-icon mdi  mdi-view-dashboard"></i>
+            <span class="menu-title">users cover</span>
+          </a>
+        </li>
+
         <li class="nav-item @if($link=='content') active @endif">
           <a class="nav-link" href="{{url('admin/content/home')}}">
             <i class="menu-icon mdi  mdi-view-dashboard"></i>

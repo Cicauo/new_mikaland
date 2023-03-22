@@ -115,7 +115,7 @@ class HomeContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id,$type)
     {
         $delete = HomeContent::deleteData($id);
 

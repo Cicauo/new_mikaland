@@ -46,7 +46,7 @@
                                 data-bs-toggle="modal" data-bs-target="#edit{{$key->id}}">
                                     edit
                                 </button>
-                              <a href="javascript:void(0)" onclick="hapus('{{url('admin/home_content/'.$type.'/destroy/'.$key->id)}}')" class="btn btn-sm btn-danger">delete</a>
+                              <a href="javascript:void(0)" onclick="hapus('{{url('admin/home_content/destroy/'.$key->id)}}')" class="btn btn-sm btn-danger">delete</a>
                             </td>
                           </tr>
 

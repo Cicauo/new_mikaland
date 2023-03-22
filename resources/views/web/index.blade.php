@@ -94,42 +94,19 @@
                    <h2>Latest works</h2>
                 </div><!--/.section-heading-->
                 <div id="projects-carousel" class="projects-carousel owl-carousel">
+                    @foreach($home_type as $home)
                     <div class="project-item">
-                        <img src="{{url('web/img/savana-home-primary-project.jpg')}}" alt="projects">
+                        <img src="{{url('storage/'.$home->image)}}" alt="projects">
                         <div class="overlay"></div>
-                        <a href="{{url('web/img/savana-home-primary-project.jpg')}}" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
+                        <a href="{{url('storage/'.$home->image)}}" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
                         <div class="projects-content">
-                            <a href="savana-type-50" class="category">Cluster</a>
-                            <h3><a href="savana-type-50" class="tittle">Savana Park Type 50/60</a></h3>
+                            <a href="{{url('project/detail/'.$home->id)}}" class="category">Cluster</a>
+                            <h3><a href="{{url('project/detail/'.$home->id)}}" class="tittle">{{$home->projects}} {{$home->name}}</a></h3>
                         </div>
                     </div>
-                    <div class="project-item">
-                        <img src="{{url('web/img/savana-home-secondary-projects-2.jpg')}}" alt="projects">
-                        <div class="overlay"></div>
-                        <a href="{{url('web/img/savana-home-secondary-projects-2.jpg')}}" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
-                        <div class="projects-content">
-                            <a href="savana-type-33" class="category">Cluster</a>
-                            <h3><a href="savana-type-33" class="tittle">Savana Park Typer 33/60</a></h3>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <img src="{{url('web/img/rajawali36.jpg')}}" alt="projects">
-                        <div class="overlay"></div>
-                        <a href="{{url('web/img/rajawali-type-36.jpg')}}" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
-                        <div class="projects-content">
-                            <a href="rajawal-type-36" class="category">Cluster</a>
-                            <h3><a href="rajawali-type-36" class="tittle">Rajawali Type 36/72</a></h3>
-                        </div>
-                    </div>
-                    <div class="project-item">
-                        <img src="{{url('web/img/pesona-33.jpg')}}" alt="projects">
-                        <div class="overlay"></div>
-                        <a href="{{url('web/img/pesoa-33.jpg')}}" class="view-icon img-popup" data-gall="myGallery"> <i class="fas fa-expand"></i></a>
-                        <div class="projects-content">
-                            <a href="mega-pesona-type-33" class="category">Cluster</a>
-                            <h3><a href="mega-pesona-type-33" class="tittle">Mega Pesona</a></h3>
-                        </div>
-                    </div>
+
+                    @endforeach
+
                 </div>
             </div>
         </section><!--/.projects-section-->

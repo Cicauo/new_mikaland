@@ -27,6 +27,7 @@ class HomeController extends Controller
         $data['coursel']    = Content::where('position','home')->where('type','coursel')->get();
         $data['about']      = Content::where('position','home')->where('type','about')->first();
         $data['artikel']    = Artikel::limitArtikel();
+        $data['home_type']  = Home::listData();
 
         return view('web.index',$data);
     }

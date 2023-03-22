@@ -46,7 +46,19 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'                => 'required|string',
+            'email'               => 'required',
+            'message'             => 'required',
+        ]);
+
+        $save = Contact::insertData($request);
+
+        if($save){
+            return redirect()->back()->with('message','success save data')->with('message_type','primary');
+        }else{
+            return redirect()->back()->with('message','failed save data')->with('message_type','warning');
+        }
     }
 
     /**

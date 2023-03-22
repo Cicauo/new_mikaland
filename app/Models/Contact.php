@@ -53,7 +53,7 @@ class Contact extends Model
 
         public static function insertData($request){
 
-            $data = Projects::create([
+            $data = Contact::create([
                 'id' => (string) Str::uuid(),
                 'name' => $request->name,
                 'email' => $request->email,
@@ -65,7 +65,7 @@ class Contact extends Model
 
         public static function updateData($request){
 
-            $data = Projects::where('id',$request->id)->update([
+            $data = Contact::where('id',$request->id)->update([
                 'name' => $request->name,
                 'email' => $request->email,
                 'message' => $request->message,

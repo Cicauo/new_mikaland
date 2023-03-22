@@ -44,6 +44,16 @@ class HomeController extends Controller
         return view('web.about',$data);
     }
 
+    public function contact()
+    {
+        //
+        $data['link']       = 'contact';
+        $data['map']        = Content::where('position','contact')->where('type','map')->first();
+        $data['header']     = Content::where('position','contact')->where('type','header')->first();
+        $data['detail']     = Content::where('position','contact')->where('type','detail')->orderBy('created_at','asc')->get();
+        return view('web.contact',$data);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

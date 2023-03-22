@@ -253,7 +253,7 @@ Route::middleware(['web'])->group(function () {
 
     //contact
     Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
-
+    Route::post('/contact/store', [ContactController::class, 'store']);
 
 
 

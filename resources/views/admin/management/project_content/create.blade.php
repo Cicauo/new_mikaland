@@ -54,6 +54,7 @@
                     <option >map</option>
                     <option >usp</option>
                     <option >whatsapp</option>
+                    <option >download</option>
                     </select>
                   </div>
 

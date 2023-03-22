@@ -17,7 +17,9 @@
                             </div>
                             <div class="blog-content">
                                 <h3><a href="{{url('blog/detail/'.$art->slug)}}">{{$art->title}}</a></h3>
-                                <p>Setelah melalui proses yang panjang dan penuh antisipasi, akhirnya Cluster Savana Park siap menyerahkan unit...</p>
+                                <p>@php
+                                    echo substr($art->content,0,60);
+                                @endphp ...</p>
                                 <a href="{{url('blog/detail/'.$art->slug)}}" class="read-more">Baca Selengkapnya</a>
                             </div>
                         </div>

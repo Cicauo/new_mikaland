@@ -121,12 +121,49 @@ class ProjectContent extends Model
         
                 public static function detailData($id){
                     $data = ProjectContent::join('projects','projects_content.project_id','=','projects.id')
-                ->where('projects_content.id',$id)
-                ->select('projects.name as projects','projects_content.*')
-                ->orderBy('projects_content.created_at','desc')
-                ->first();
+                        ->where('projects_content.id',$id)
+                        ->select('projects.name as projects','projects_content.*')
+                        ->orderBy('projects_content.created_at','desc')
+                        ->first();
+                
 
-                return $data;
+                        return $data;
                     }
+
+
+                    public static function detailType($id,$type){
+                        $data = ProjectContent::join('projects','projects_content.project_id','=','projects.id')
+                            ->where('projects.id',$id)
+                            ->where('projects_content.type',$type)
+                            ->select('projects.name as projects','projects_content.*')
+                            ->orderBy('projects_content.created_at','desc')
+                            ->first();
+                    
+    
+                            return $data;
+                        }
+
+                    public static function detailOne($slug,$type){
+                        $data = ProjectContent::join('projects','projects_content.project_id','=','projects.id')
+                        ->where('projects_content.type',$type)
+                        ->where('projects.slug',$slug)
+                        ->select('projects.name as projects','projects.slug','projects_content.*')
+                        ->first();
+
+                        return $data;
+                    }
+
+                    public static function detailAll($slug,$type){
+                        $data = ProjectContent::join('projects','projects_content.project_id','=','projects.id')
+                        ->where('projects_content.type',$type)
+                        ->where('projects.slug',$slug)
+                        ->select('projects.name as projects','projects.slug','projects_content.*')
+                        ->orderBy('projects_content.created_at','asc')
+                        ->get();
+
+                        return $data;
+                    }
+    
+    
         }
 

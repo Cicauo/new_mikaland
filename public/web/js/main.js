@@ -160,6 +160,30 @@
         }
     });
 
+    $('#project-slide').owlCarousel({
+        loop: true,
+        margin: 25,
+        autoplay: true,
+        smartSpeed: 500,
+        nav: false,
+        navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>'],
+        dots: true,
+        responsive : {
+            0 : {
+                items: 1
+            },
+            480 : {
+                items: 1,
+            },
+            768 : {
+                items: 1,
+            },
+            992 : {
+                items: 1,
+            }
+        }
+    });
+
 /*=========================================================================
     Project Single Carousel
 =========================================================================*/

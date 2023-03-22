@@ -59,7 +59,7 @@ class HomeContent extends Model
     }
 
     public static function detailData($id){
-        $data = HomeContent::join('home','home_content.home_id','=','home.id')
+        $data = HomeContent::leftJoin('home','home_content.home_id','=','home.id')
                 ->where('home_content.id',$id)
                 ->select('home.name as home','home_content.*')
                 ->first();
@@ -130,6 +130,36 @@ class HomeContent extends Model
         }
         
         $data = HomeContent::where('id',$id)->delete();
+        return $data;
+    }
+
+    public static function detailAll($id,$type){
+        $data = HomeContent::leftJoin('home','home_content.home_id','=','home.id')
+                ->where('home.id',$id)
+                ->where('home_content.type',$type)
+                ->select('home.name as home','home.content','home_content.*')
+                ->get();
+
+        return $data;
+    }
+
+    public static function detail($id){
+        $data = HomeContent::leftJoin('home','home_content.home_id','=','home.id')
+                ->leftJoin('projects','home.project_id','=','projects.id')
+                ->where('home.id',$id)
+                ->select('home.name as home','home_content.*','projects.name as projects','projects.id as project_id')
+                ->first();
+
+        return $data;
+    }
+
+    public static function detailOne($id){
+        $data = HomeContent::leftJoin('home','home_content.home_id','=','home.id')
+                ->leftJoin('projects','home.project_id','=','projects.id')
+                ->where('home.id',$id)
+                ->select('home.name as home','home_content.*','projects.name as projects','home.content')
+                ->first();
+
         return $data;
     }
 }

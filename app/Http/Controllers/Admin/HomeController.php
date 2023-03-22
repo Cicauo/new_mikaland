@@ -5,7 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Content;
+use App\Models\ProjectContent;
 use App\Models\Projects;
+use App\Models\Home;
+use App\Models\HomeContent;
 use Storage;
 use App\Models\Artikel;
 
@@ -111,7 +114,35 @@ class HomeController extends Controller
     public function project($slug)
     {
         $data['link']       = 'project';
+        $data['header']     = ProjectContent::detailOne($slug,'header');
+        $data['about']     = ProjectContent::detailOne($slug,'about');
+        $data['site_plan']     = ProjectContent::detailOne($slug,'site_plan');
+        $data['whatsapp']     = ProjectContent::detailOne($slug,'whatsapp');
+        $data['map']     = ProjectContent::detailOne($slug,'map');
+        $data['detail']     = ProjectContent::detailAll($slug,'detail');
+        $data['facilities']     = ProjectContent::detailAll($slug,'facilities');
+        $data['usp']     = ProjectContent::detailAll($slug,'usp');
+        $data['download']     = ProjectContent::detailOne($slug,'download');
+
+        $data['home_type']     = Home::listDataSlug($slug);
         return view('web.project',$data);
+    }
+
+    public function project_detail($id)
+    {
+        $data['link']               = 'project';
+        $detail                     = HomeContent::detail($id);
+        $project                    = Projects::detailData($detail->project_id);
+        $data['header']            = ProjectContent::detailType($detail->project_id,'header');
+        $data['description']        = HomeContent::detailAll($id,'description');
+        $data['image']              = HomeContent::detailAll($id,'image');
+        $data['spesifikasi']        = HomeContent::detailAll($id,'spesifikasi');
+        $data['row']                = HomeContent::detailOne($id);
+        $data['home_type']          = Home::listDataSlug($project->slug);
+
+        $data['spesifikasi_1']      = HomeContent::where('home_id',$id)->where('type','spesifikasi')->skip(0)->take(6)->get();
+        $data['spesifikasi_2']      = HomeContent::where('home_id',$id)->where('type','spesifikasi')->skip(6)->take(20)->get();
+        return view('web.project_detail',$data);
     }
 
     /**

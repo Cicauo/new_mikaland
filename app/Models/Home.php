@@ -110,4 +110,14 @@ class Home extends Model
         $data = Home::where('id',$id)->delete();
         return $data;
     }
+
+    public static function listDataSlug($slug){
+        $data = Home::join('projects','home.project_id','=','projects.id')
+                ->where('projects.slug',$slug)
+                ->select('projects.name as projects','home.*')
+                ->orderBy('home.created_at','desc')
+                ->get();
+
+        return $data;
+    }
 }

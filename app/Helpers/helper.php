@@ -19,7 +19,7 @@ class Helper {
     }
 
     public static function project(){
-        $data = DB::table('projects')->get();
+        $data = DB::table('projects')->orderBy('created_at','asc')->get();
 
         return $data;
     }

@@ -44,8 +44,8 @@
                       <p>no image</p>
                   @endif
               </td>
-                <td>{{$key->created_at}}</td>
                 <td>{{$key->category}}</td>
+                <td>{{Date::blogDate($key->created_at)}}</td>
                 <td>
                   <a href="{{url('admin/artikel/show/'.$key->id)}}" class="btn btn-sm btn-primary">detail</a>
                   <a href="{{url('admin/artikel/edit/'.$key->id)}}" class="btn btn-sm btn-warning">edit</a>

@@ -31,4 +31,10 @@ class Date {
         return date('Y-m-d');
     }
 
+    public static function blogDate($date){
+        $newDate = date("d F Y", strtotime($date));
+
+        return $newDate;
+    }
+
 }

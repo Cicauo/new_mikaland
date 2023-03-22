@@ -255,6 +255,11 @@ Route::middleware(['web'])->group(function () {
     Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
     Route::post('/contact/store', [ContactController::class, 'store']);
 
+    //blog
+    Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
+    Route::get('/blog/category/{category}', [HomeController::class, 'blog_category']);
+    Route::get('/blog/detail/{slug}', [HomeController::class, 'blog_detail']);
+    Route::post('blog/search',[HomeController::class, 'blog_search']);
 
 
 });

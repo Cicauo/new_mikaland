@@ -30,6 +30,18 @@ class Helper {
         return $data;
     }
 
+    public static function blog_category(){
+        $data = DB::table('artikel_category')->get();
+
+        return $data;
+    }
+
+    public static function blog_recent(){
+        $data = DB::table('artikel')->orderBy('created_at','desc')->paginate(5);
+
+        return $data;
+    }
+
     public static function spesialis(){
         $data = DB::table('content')->where('position','home')->where('type','spesialis')->orderBy('created_at','asc')->get();
 

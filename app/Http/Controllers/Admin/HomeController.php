@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Content;
 use App\Models\Projects;
 use Storage;
+use App\Models\Artikel;
 
 class HomeController extends Controller
 {
@@ -54,15 +55,38 @@ class HomeController extends Controller
         return view('web.contact',$data);
     }
 
+    public function blog()
+    {
+        $data['link']       = 'blog';
+        $data['artikel']    = Artikel::listDataPaginate();
+        return view('web.blog',$data);
+    }
+
+
+    public function blog_category($category)
+    {
+        $data['link']       = 'blog';
+        $data['artikel']    = Artikel::listDataPaginateCategory($category);
+        return view('web.blog',$data);
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function blog_search(Request $request)
     {
-        //
+        $request->validate([
+            'title'   => 'required|string',
+        ]);
+
+        $data['link']       = 'blog';
+        $data['artikel']    = Artikel::listDataPaginateSearch($request->title);
+        return view('web.blog',$data);
+        
     }
 
     /**
@@ -71,9 +95,11 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function blog_detail($slug)
     {
-        //
+        $data['link']       = 'blog';
+        $data['row']    = Artikel::detailDataSlug($slug);
+        return view('web.blog_detail',$data);
     }
 
     /**

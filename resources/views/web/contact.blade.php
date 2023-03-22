@@ -1,6 +1,6 @@
 @extends('web.layouts.content')
 @section('content')
-<div id="google-map">
+<div id="google-map" style="margin-top:100px;">
  {{-- <img src="img/maps-savana.jpg" class="mx-auto d-block" alt="Responsive image"> --}}
 @php echo $map->link; @endphp
 </div><!-- /#google-map -->

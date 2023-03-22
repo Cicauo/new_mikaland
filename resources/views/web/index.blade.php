@@ -343,24 +343,12 @@
            <div class="dots"></div>
             <div class="container">
                 <div id="sponsor-carousel" class="sponsor-carousel owl-carousel">
-                    <div class="sponsor-item">
-                        <img src="{{url('web/img/logo-apersi.png')}}" alt="sponsor">
-                    </div>
-                    <div class="sponsor-item">
-                        <img src="{{url('web/img/logo-pupr.png')}}" alt="sponsor">
-                    </div>
-                    <div class="sponsor-item">
-                        <img src="{{url('web/img/logo-bank-bni.png')}}" alt="sponsor">
-                    </div>
-                    <div class="sponsor-item">
-                        <img src="{{url('web/img/logo-bank-btn.png')}}" alt="sponsor">
-                    </div>
-                    <div class="sponsor-item">
-                        <img src="{{url('web/img/logo-bank-bsi.png')}}" alt="sponsor">
-                    </div>
-                    <div class="sponsor-item">
-                        <img src="{{url('web/img/logo-bank-bri.png')}}" alt="sponsor">
-                    </div>
+
+                    @foreach (Helper::customer() as $customers)
+                        <div class="sponsor-item">
+                            <img src="{{url('storage/'.$customers->image)}}" alt="sponsor">
+                        </div>
+                    @endforeach
                     
                 </div>
             </div>

@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
                 'cms_role_id'    => 1,
                 'id'             => (string) Str::uuid(),
                 'name'           => 'superadmin',
-                'email'          => 'miakalnd@gmail.com',
+                'email'          => 'mikaland@gmail.com',
                 'phone'          => '088220148340',
                 'status'         => 'active',
                 'password'       => Hash::make('admin')

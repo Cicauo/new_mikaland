@@ -18,6 +18,18 @@ class Helper {
     return $slug;
     }
 
+    public static function project(){
+        $data = DB::table('projects')->get();
+
+        return $data;
+    }
+
+    public static function customer(){
+        $data = DB::table('customer')->get();
+
+        return $data;
+    }
+
     public static function resizeImage($file,$folder){
         $image              = $file;
         $ext                = $file->extension();

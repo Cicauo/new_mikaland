@@ -108,9 +108,10 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function project($slug)
     {
-        //
+        $data['link']       = 'project';
+        return view('web.project',$data);
     }
 
     /**

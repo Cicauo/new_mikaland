@@ -48,6 +48,7 @@
                     <option selected>Open this select menu</option>
                     <option >header</option>
                     <option >about</option>
+                    <option >detail</option>
                     <option >facilities</option>
                     <option >site_plan</option>
                     <option >map</option>

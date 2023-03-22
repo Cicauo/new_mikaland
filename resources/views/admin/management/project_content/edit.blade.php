@@ -50,6 +50,7 @@
                     <option selected value="{{$row->type}}">{{$row->type}}</option>
                     <option >header</option>
                     <option >about</option>
+                    <option >detail</option>
                     <option >facilities</option>
                     <option >site_plan</option>
                     <option >map</option>

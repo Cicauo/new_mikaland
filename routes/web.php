@@ -261,5 +261,8 @@ Route::middleware(['web'])->group(function () {
     Route::get('/blog/detail/{slug}', [HomeController::class, 'blog_detail']);
     Route::post('blog/search',[HomeController::class, 'blog_search']);
 
+    //project
+    Route::get('/project/{slug}', [HomeController::class, 'project']);
+
 
 });

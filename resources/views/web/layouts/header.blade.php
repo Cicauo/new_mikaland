@@ -14,7 +14,7 @@
                         <li><a href="#">Projects</a>
                         <ul id="project-menu">
                             @foreach (Helper::project() as $item)
-                                <li><a href="{{url($item->slug)}}">{{$item->name}}</a></li>
+                                <li><a href="{{url('project/'.$item->slug)}}">{{$item->name}}</a></li>
                             @endforeach
                             
                         </ul>

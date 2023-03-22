@@ -44,8 +44,8 @@
                         <thead>
                           <tr>
                             <th>Project ID</th>
-                            <th>title</th>
                             <th>Type</th>
+                            <th>title</th>
                             <th>Image</th>
                             <th>Action</th>
                           </tr>
@@ -54,8 +54,8 @@
                           @foreach($row as $key)
                           <tr>
                             <td>{{$key->projects}}</td>
-                            <td>{{$key->title}}</td>
                             <td>{{$key->type}}</td>
+                            <td>{{$key->title}}</td>
                             <td>
                                 @if($key->image)
                                 <a data-fslightbox="gallery" href="{{url('storage/'.$key->image)}}">

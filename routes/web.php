@@ -83,7 +83,7 @@ Route::middleware(['web'])->group(function () {
 
             //home content
             Route::get('home_content/{type}/{id}',[HomeContentController::class, 'index']);
-            Route::get('home_content/{type}/destroy/{id}',[HomeContentController::class, 'destroy']);
+            Route::get('home_content_destroy/{type}/{id}',[HomeContentController::class, 'destroy']);
             Route::post('home_content/store',[HomeContentController::class, 'store']);
             Route::post('home_content/update',[HomeContentController::class, 'update']);  
 

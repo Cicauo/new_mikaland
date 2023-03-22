@@ -115,9 +115,9 @@ class HomeContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id,$type)
+    public function destroy($type,$id)
     {
-        $delete = HomeContent::deleteData($id);
+        $delete = HomeContent::where('id',$id)->delete();
 
         if($delete){
             return redirect()->back()->with('message','success delete data')->with('message_type','primary');

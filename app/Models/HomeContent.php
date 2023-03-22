@@ -123,12 +123,7 @@ class HomeContent extends Model
         }
 
     public static function deleteData($id){
-        $check = HomeContent::where('id',$id)->first();
 
-        if ($check->image){
-            Helper::deleteImage($check->image);
-        }
-        
         $data = HomeContent::where('id',$id)->delete();
         return $data;
     }

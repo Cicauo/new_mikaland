@@ -37,7 +37,7 @@ class Helper {
     }
 
     public static function blog_recent(){
-        $data = DB::table('artikel')->orderBy('created_at','desc')->paginate(5);
+        $data = DB::table('artikel')->orderBy('created_at','desc')->limit(5)->get();
 
         return $data;
     }

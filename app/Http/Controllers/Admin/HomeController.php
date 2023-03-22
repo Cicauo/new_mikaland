@@ -26,6 +26,7 @@ class HomeController extends Controller
         $data['spesialis']  = Content::where('position','home')->where('type','spesialis')->orderBy('created_at','asc')->get();
         $data['coursel']    = Content::where('position','home')->where('type','coursel')->get();
         $data['about']      = Content::where('position','home')->where('type','about')->first();
+        $data['artikel']    = Artikel::orderBy('created_at','desc')->limit(3)->get();
 
         return view('web.index',$data);
     }

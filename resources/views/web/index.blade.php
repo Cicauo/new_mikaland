@@ -174,45 +174,28 @@
                    <h2>Berita & Event</h2>
                 </div><!--/.section-heading-->
                 <div class="row blog-wrap">
+
+                    @foreach ($artikel as $art)
+                        
+                    
                     <div class="col-lg-4 col-sm-6 sm-padding">
                         <div class="blog-item">
                             <div class="blog-thumb">
-                                <img src="{{url('web/img/blogsrh1.png')}}" alt="post">
-                                <span class="category"><a href="#">Serah Terima</a></span>
+                                <img src="{{url('storage/'.$art->image)}}" alt="post">
+                                <span class="category"><a href="#">{{$art->category}}</a></span>
                             </div>
                             <div class="blog-content">
-                                <h3><a href="blog-detail">Serah Terima Unit Konsumen | Tahap ke-1</a></h3>
-                                <p>Setelah melalui proses yang panjang dan penuh antisipasi, akhirnya Cluster Savana Park siap menyerahkan unit...</p>
-                                <a href="blog-detail" class="read-more">Baca Selengkapnya</a>
+                                <h3><a href="{{url('blog/detail/'.$art->slug)}}">{{$art->title}}</a></h3>
+                                <p>@php
+                                    echo substr($art->content,0,60);
+                                @endphp ...</p>
+                                <a href="{{url('blog/detail/'.$art->slug)}}" class="read-more">Baca Selengkapnya</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 sm-padding">
-                        <div class="blog-item">
-                            <div class="blog-thumb">
-                                <img src="{{url('web/img/blogsrh-4.png')}}" alt="post">
-                                <span class="category"><a href="#">Pembangunan</a></span>
-                            </div>
-                            <div class="blog-content">
-                                <h3><a href="blog-detail-2">Savana Park 2 Lantai, Solusi Hunian Modern dan Nyaman</a></h3>
-                                <p>Savana Park kembali hadir dengan solusi hunian modern dan nyaman, yaitu perumahan Sava...</p>
-                                <a href="blog-detail-2" class="read-more">Baca Selengkapnya</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 sm-padding">
-                        <div class="blog-item">
-                            <div class="blog-thumb">
-                                <img src="{{url('web/img/gate1.png')}}" alt="post">
-                                <span class="category"><a href="#">Informasi</a></span>
-                            </div>
-                            <div class="blog-content">
-                                <h3><a href="blog-detail-3">Savana Park mulai merealisasikan kampanye one-gate system.</a></h3>
-                                <p>Keamanan adalah salah satu aspek penting yang menjadi pertimbangan utama dalam memilih hunian. Sa...</p>
-                                <a href="blog-detail-3" class="read-more">Baca Selengkapnya</a>
-                            </div>
-                        </div>
-                    </div>
+
+                    @endforeach
+
                 </div>
             </div>
         </section><!--/.blog-section-->

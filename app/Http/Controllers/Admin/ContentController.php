@@ -51,7 +51,7 @@ class ContentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'type' => 'required',
         ]);
             
         $save = Content::insertData($request);
@@ -101,7 +101,7 @@ class ContentController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'title' => 'required',
+            'type' => 'required',
             'id'    => 'required'
         ]);
             

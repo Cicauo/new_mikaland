@@ -21,15 +21,14 @@
         <div class="col-sm-12">    
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">{{$title}}</h4>
+                    <h4 class="card-title">{{$title}} {{$position}}</h4>
                     <div class="table-responsive">
                       <table class="table table" id="tabel">
                         <thead>
                           <tr>
                             <th>position</th>
-                            <th>title</th>
-                            <th>subtitle</th>
                             <th>Type</th>
+                            <th>title</th>
                             <th>Image</th>
                             <th>Action</th>
                           </tr>
@@ -38,9 +37,8 @@
                           @foreach($row as $key)
                           <tr>
                             <td>{{$key->position}}</td>
-                            <td>{{$key->title}}</td>
-                            <td>{{$key->subtitle}}</td>
                             <td>{{$key->type}}</td>
+                            <td>{{$key->title}}</td>
                             <td>
                                 @if($key->image)
                                 <a data-fslightbox="gallery" href="{{url('storage/'.$key->image)}}">

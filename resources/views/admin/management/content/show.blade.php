@@ -12,7 +12,7 @@
         <div class="col-sm-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <p class="card-description"> {{$title}} </p>
+              <p class="card-description"> {{$title}} {{$row->position}} </p>
               
               <div class="table-responsive">
                 <table class="table table-borderless">

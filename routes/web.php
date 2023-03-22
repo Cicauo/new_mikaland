@@ -249,10 +249,10 @@ Route::middleware(['web'])->group(function () {
 
     // Frontend
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/about-company', [AboutController::class, 'index'])->name('about');
+    Route::get('/about', [HomeController::class, 'about'])->name('about');
 
     //contact
-    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+    Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 
 

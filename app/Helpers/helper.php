@@ -30,6 +30,12 @@ class Helper {
         return $data;
     }
 
+    public static function spesialis(){
+        $data = DB::table('content')->where('position','home')->where('type','spesialis')->orderBy('created_at','asc')->get();
+
+        return $data;
+    }
+
     public static function resizeImage($file,$folder){
         $image              = $file;
         $ext                = $file->extension();

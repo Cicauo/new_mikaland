@@ -5,7 +5,7 @@
           href="{{url('admin/content/home/')}}"><i class='bx bx-plus'></i>&nbsp;content home</a>
           &nbsp;
           <a class="btn @if($position == 'about') btn-success @else btn-secondary @endif btn-sm" 
-          href="{{url('admin/content/about/')}}"><i class='bx bx-plus'></i>&nbsp;content home</a>
+          href="{{url('admin/content/about/')}}"><i class='bx bx-plus'></i>&nbsp;content about</a>
           &nbsp;
           <a class="btn @if($position == 'contact') btn-success @else btn-secondary @endif btn-sm" 
           href="{{url('admin/content/contact/')}}"><i class='bx bx-plus'></i>&nbsp;content contact</a>

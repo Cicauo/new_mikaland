@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Content;
+use App\Models\Projects;
+use Storage;
 
 class HomeController extends Controller
 {
@@ -14,7 +17,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('web.index');
+        $data['link']       = 'home';
+        $data['testimoni']  = Content::where('position','home')->where('type','testimoni')->orderBy('created_at','asc')->get();
+        $data['spesialis']  = Content::where('position','home')->where('type','spesialis')->orderBy('created_at','asc')->get();
+        $data['coursel']    = Content::where('position','home')->where('type','coursel')->get();
+        $data['about']      = Content::where('position','home')->where('type','about')->first();
+
+        return view('web.index',$data);
     }
 
     /**
@@ -22,9 +31,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function about()
     {
         //
+        $data['link']       = 'about';
+        $data['header']     = Content::where('position','about')->where('type','header')->first();
+        $data['about']      = Content::where('position','about')->where('type','about')->first();
+        $data['detail']     = Content::where('position','about')->where('type','detail')->orderBy('created_at','asc')->get();
+        $data['visi']       = Content::where('position','about')->where('type','visi')->first();
+        $data['misi']       = Content::where('position','about')->where('type','misi')->orderBy('created_at','asc')->get();
+        $data['sertivikat']= Content::where('position','about')->where('type','sertivikasi')->orderBy('created_at','asc')->get();
+        return view('web.about',$data);
     }
 
     /**

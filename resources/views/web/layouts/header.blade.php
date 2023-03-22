@@ -5,10 +5,10 @@
             <div class="d-flex menu-wrap">
                 <div id="mainmenu" class="mainmenu">
                     <ul class="nav">
-                        <li><a data-scroll class="nav-link active" href="{{url('/')}}">Home<span class="sr-only">(current)</span></a>
+                        <li><a data-scroll class="@if($link=='home') nav-link active @endif" href="{{url('/')}}">Home<span class="sr-only">(current)</span></a>
 
                         </li>
-                        <li><a href="{{url('about')}}">About</a>
+                        <li><a class="@if($link=='about') nav-link active @endif" href="{{url('about')}}">About</a>
 
                         </li>
                         <li><a href="#">Projects</a>
@@ -19,10 +19,10 @@
                             
                         </ul>
                     </li>
-                    <li><a href="{{url('blog')}}">Blog</a>
+                    <li><a class="@if($link=='blog') nav-link active @endif"  href="{{url('blog')}}">Blog</a>
 
                     </li>
-                    <li><a href="{{url('contact')}}">Contact</a></li>
+                    <li><a class="@if($link=='contact') nav-link active @endif"  href="{{url('contact')}}">Contact</a></li>
                     <li class="phone"><i class="fa fa-phone"></i> (+021) 599 5 888</li>
                     </ul>
                 </div>

@@ -12,7 +12,7 @@
         <div class="col-sm-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">{{$title}}</h4>
+              <h4 class="card-title">{{$title}} {{$row->position}}</h4>
               <form class="forms-sample" method="POST" action="{{url('admin/content/update')}}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="id" value="{{$row->id}}">
@@ -53,7 +53,11 @@
                     <option >header</option>
                     <option >about</option>
                     <option >sertivikasi</option>
-                    <option >planing</option>
+                    <option >spesialis</option>
+                    <option >detail</option>
+                    <option >visi</option>
+                    <option >misi</option>
+                    <option >map</option>
                     </select>
                   </div>
 

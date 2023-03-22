@@ -50,6 +50,16 @@ class Artikel extends Model
         return $data;
     }
 
+    public static function limitArtikel(){
+        $data = Artikel::leftJoin('users','artikel.users_id','=','users.id')
+                ->leftJoin('artikel_category','artikel.artikel_category_id','artikel_category.id')
+                ->select('artikel.*','artikel_category.category','users.name as users')
+                ->orderBy('artikel.created_at','desc')
+                ->limit(3)->get();
+        
+        return $data;
+    }
+
     public static function listDataPaginateCategory($category_id){
         $data = Artikel::leftJoin('users','artikel.users_id','=','users.id')
                 ->leftJoin('artikel_category','artikel.artikel_category_id','artikel_category.id')

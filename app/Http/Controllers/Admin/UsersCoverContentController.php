@@ -17,7 +17,7 @@ class UsersCoverContentController extends Controller
     public static function init(){
 
         $data['title'] = 'users_cover_content';
-        $data['link'] = 'users_cover_content';
+        $data['link'] = 'users_cover';
         
         return $data;
     }

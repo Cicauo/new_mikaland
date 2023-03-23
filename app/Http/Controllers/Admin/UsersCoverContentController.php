@@ -51,7 +51,7 @@ class UsersCoverContentController extends Controller
     {
         $request->validate([
             'users_cover_id'  => 'required',
-            'sorter'  => 'required|unique:users_cover_content,sorter',
+            'sorter'  => 'required',
         ]);
             
         $save = UsersCoverContent::insertData($request);

@@ -1,5 +1,9 @@
 @extends('web.layouts.content')
 @section('content')
+
+@push('css')
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+@endpush
 {{-- <section class="page-header padding"> --}}
 <section class="page-headers padding" style="background-image: url('{{url('storage/'.$header->image)}}')">
     <div class="container">
@@ -26,10 +30,15 @@
                         @endforeach
                         
                     </ul>
-                    <a class="default-btn" href="{{$download->link}}" class="button">
+                    {{-- <a class="default-btn" href="{{$download->link}}" class="button">
                         <i class="fa fa-download"></i>
                         Download Browsur
-                    </a>
+                    </a> --}}
+                    <br>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#download">
+                        <i class="fa fa-download"></i>&nbsp;Download Browsur
+                    </button>
+
                 </div>
             </div>
             <div class="col-md-6 xs-padding">
@@ -192,11 +201,49 @@
 </div>
 <!--/.sponsor-section-->
 
+<!-- Modal -->
+<div class="modal fade" id="download" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Download Browsur</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="{{ url('contact/store')}}" method="POST" id="ajax_form" class="form-horizontal">
+            @csrf
+            <div class="modal-body">
+
+                <input type="hidden" name="email" value="example@gmail.com">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">name</label>
+                    <input type="name" class="form-control" name="name" id="name" placeholder="nama lengkap" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">phone</label>
+                    <input type="number" class="form-control" name="message" id="message" placeholder="message" required>
+                </div>
+            
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 @push('js')
-
-<script>
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+@if(session()->has('message'))
+    <script>
+        $(document).ready(function () {
+            window.location.href = "{{$download->link}}";
+        });
+    </script>
+@endif
     
 @endpush
 @endsection

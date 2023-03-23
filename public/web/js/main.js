@@ -133,6 +133,30 @@
         }
     });
 
+
+    $('#promo').owlCarousel({
+        margin:10,
+        loop:true,
+        autoWidth:true,
+        autoplay: true,
+        smartSpeed: 500,
+        nav: false,
+        responsive : {
+            0 : {
+                items: 1
+            },
+            480 : {
+                items: 1,
+            },
+            768 : {
+                items: 1,
+            },
+            992 : {
+                items: 2,
+            }
+        }
+    })
+
 /*=========================================================================
     Projects Carousel 2
 =========================================================================*/

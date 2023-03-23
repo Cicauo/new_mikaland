@@ -20,7 +20,7 @@
         </li>
 
         <li class="nav-item @if($link=='content') active @endif">
-          <a class="nav-link" href="{{url('admin/content/home')}}">
+          <a class="nav-link" href="{{url('admin/content/about')}}">
             <i class="menu-icon mdi  mdi-view-dashboard"></i>
             <span class="menu-title">Content</span>
           </a>

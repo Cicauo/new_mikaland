@@ -23,6 +23,7 @@ class HomeController extends Controller
     {
         $data['link']       = 'home';
         $data['testimoni']  = Content::where('position','home')->where('type','testimoni')->orderBy('created_at','asc')->get();
+        $data['promo']      = Content::where('position','home')->where('type','promo')->orderBy('created_at','asc')->get();
         $data['spesialis']  = Content::where('position','home')->where('type','spesialis')->orderBy('created_at','asc')->get();
         $data['coursel']    = Content::where('position','home')->where('type','coursel')->get();
         $data['about']      = Content::where('position','home')->where('type','about')->first();

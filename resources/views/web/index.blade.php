@@ -110,6 +110,25 @@
                 </div>
             </div>
         </section><!--/.projects-section-->
+
+
+        <section class="projects-section padding">
+            <div class="container-fluid">
+                <div class="section-heading text-center mb-40">
+                   <span>Promo</span>
+                   <h2>Promo Sales</h2>
+                </div><!--/.section-heading-->
+                <div id="promo" class="projects-carousel owl-carousel">
+                    @foreach($promo as $promos)
+                    <div class="project-item">
+                        <img src="{{url('storage/'.$promos->image)}}" style="height:350px" alt="projects">
+                    </div>
+
+                    @endforeach
+
+                </div>
+            </div>
+        </section><!--/.projects-section-->
         
         
         

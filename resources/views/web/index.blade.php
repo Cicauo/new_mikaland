@@ -23,7 +23,7 @@
                             </div></div></div>
                             <div class="dl-btn-group">
                                 <div class="inner-layer">
-                                    <a href="savana-list" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">Lihat Project <i class="arrow_right"></i></a>
+                                    <a href="{{url('project/'.$coursels->link)}}" class="dl-btn" data-animation="fade-in-left" data-delay="3.5s">Lihat Project <i class="arrow_right"></i></a>
                                 </div>
                             </div>
                         </div>

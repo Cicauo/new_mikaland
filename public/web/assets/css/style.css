@@ -1872,7 +1872,7 @@ h6 .badge {
 .navbar {
   height: 70px;
   left: 250px;
-  right: 5px;
+  right: 250px;
   position: absolute;
   z-index: 890;
   background-color: transparent;

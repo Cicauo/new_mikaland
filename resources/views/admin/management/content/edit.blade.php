@@ -71,20 +71,7 @@
 
                   <div class="form-group" style="margin-top: 10px">
                     <label for="description">{{Helper::uc('image')}}</label>
-                    <div class="button-wrapper">
-                        <label for="upload" class="btn btn-danger me-2 mb-4" tabindex="0">
-                        <span class="d-none d-sm-block"><i class='bx bx-cloud-upload'></i>&nbsp;Upload photo</span>
-                        <i class="bx bx-upload d-block d-sm-none"></i>
-                        <input
-                            type="file"
-                            id="upload"
-                            class="account-file-input"
-                            hidden
-                            accept="image/png, image/jpeg"
-                            name="image"
-                        />
-                        </label>
-                    </div>
+                    <input type="file" name="image">
                 </div>
 
 

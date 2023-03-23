@@ -121,7 +121,7 @@
                 <div id="promo" class="projects-carousel owl-carousel">
                     @foreach($promo as $promos)
                     <div class="project-item">
-                        <img src="{{url('storage/'.$promos->image)}}" style="height:350px" alt="projects">
+                        <img src="{{url('storage/'.$promos->image)}}" style="height:350px;wight:100%" alt="projects">
                     </div>
 
                     @endforeach

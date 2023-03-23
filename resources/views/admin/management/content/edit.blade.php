@@ -58,6 +58,7 @@
                     <option >visi</option>
                     <option >misi</option>
                     <option >map</option>
+                    <option >promo</option>
                     </select>
                   </div>
 

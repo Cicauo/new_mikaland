@@ -23,6 +23,7 @@
 
                     </li>
                     <li><a class="@if($link=='contact') nav-link active @endif"  href="{{url('contact')}}">Contact</a></li>
+                    <li class="phone" style="color:black"><i class="fa fa-phone"></i> (+021) 599 5 888</li>
                     </ul>
                 </div>
             </div>

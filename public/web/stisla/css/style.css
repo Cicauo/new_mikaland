@@ -1521,8 +1521,8 @@ h6 .badge {
 /* 3.18 Navbar */
 .navbar {
   height: 70px;
-  left: 250px;
-  right: 250px;
+  left: 150px;
+  right: 150px;
   position: absolute;
   z-index: 890;
   background-color: transparent; }

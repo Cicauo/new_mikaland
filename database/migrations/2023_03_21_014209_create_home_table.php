@@ -17,6 +17,7 @@ class CreateHomeTable extends Migration
             $table->uuid('id')->primary();
             $table->string('project_id')->nullable();
             $table->string('name')->nullable();
+            $table->string('title')->nullable();
             $table->text('content')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

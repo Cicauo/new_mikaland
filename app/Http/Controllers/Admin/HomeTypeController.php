@@ -53,6 +53,7 @@ class HomeTypeController extends Controller
         $request->validate([
             'project_id'            => 'required|string',
             'name'                  => 'required|string',
+            'title'                 => 'required|string',
             'content'               => 'required|string',
             'image'                 => 'required|file',
         ]);
@@ -106,6 +107,7 @@ class HomeTypeController extends Controller
             'id'                    => 'required|string',
             'project_id'            => 'required|string',
             'name'                  => 'required|string',
+            'title'                 => 'required|string',
             'content'               => 'required|string',
         ]);
 

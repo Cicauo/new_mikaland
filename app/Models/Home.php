@@ -17,6 +17,7 @@ class Home extends Model
         'id',
         'project_id',
         'name',
+        'title',
         'content',
         'image'
     ];
@@ -60,6 +61,7 @@ class Home extends Model
     $data = Home::create([
         'id'    => (string) Str::uuid(),
         'name'  => $request->name,
+        'title'  => $request->title,
         'content'  => $request->content,
         'project_id'  => $request->project_id,
         'image' => $image,
@@ -93,6 +95,7 @@ class Home extends Model
             $data = Home::where('id',$request->id)->update([
                 'name' => $request->name,
                 'content'  => $request->content,
+                'title'  => $request->title,
                 'project_id'  => $request->project_id,
                 'image' => $image,
             ]);

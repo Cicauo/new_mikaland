@@ -137,7 +137,7 @@
                    <span>Gallery</span>
                    <h2>My Gallery</h2>
                 </div><!--/.section-heading-->
-                <div id="projects-carousel" class="projects-carousel owl-carousel">
+                <div id="galery" class="global-carousel owl-carousel">
                     @foreach(Helper::galery() as $galery)
                     <div class="project-item">
                         <img src="{{url('storage/'.$galery->image)}}" alt="projects">

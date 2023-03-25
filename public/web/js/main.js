@@ -133,6 +133,30 @@
         }
     });
 
+    $('.global-carousel').owlCarousel({
+        loop: true,
+        margin: 5,
+        autoplay: true,
+        smartSpeed: 500,
+        nav: false,
+        navText: ['<i class="fa fa-caret-left"></i>', '<i class="fa fa-caret-right"></i>'],
+        dots: false,
+        responsive : {
+            0 : {
+                items: 1
+            },
+            580 : {
+                items: 2,
+            },
+            768 : {
+                items: 2,
+            },
+            992 : {
+                items: 4,
+            }
+        }
+    });
+
 
     $('#promo').owlCarousel({
         margin:10,

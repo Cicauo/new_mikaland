@@ -129,6 +129,25 @@
                 </div>
             </div>
         </section><!--/.projects-section-->
+
+
+        <section class="projects-section padding">
+            <div class="container-fluid">
+                <div class="section-heading text-center mb-40">
+                   <span>Gallery</span>
+                   <h2>My Gallery</h2>
+                </div><!--/.section-heading-->
+                <div id="projects-carousel" class="projects-carousel owl-carousel">
+                    @foreach(Helper::galery() as $galery)
+                    <div class="project-item">
+                        <img src="{{url('storage/'.$galery->image)}}" alt="projects">
+                    </div>
+
+                    @endforeach
+
+                </div>
+            </div>
+        </section><!--/.projects-section-->
         
         
         

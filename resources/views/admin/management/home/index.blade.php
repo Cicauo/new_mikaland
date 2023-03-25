@@ -25,6 +25,7 @@
             <thead>
               <tr>
                 <th>name</th>
+                <th>title</th>
                 <th>projects</th>
                 <th>image</th>
                 <th>created_at</th>
@@ -36,6 +37,7 @@
               @foreach($row as $key)
               <tr>
                 <td>{{$key->name}}</td>
+                <td>{{$key->title}}</td>
                 <td>{{$key->projects}}</td>
                 <td>
                   @if($key->image)

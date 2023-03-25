@@ -23,6 +23,12 @@ integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLAS
               <input type="text" class="form-control" id="name" name="name" placeholder="name" required>
             </div>
 
+            <div class="form-group">
+
+              <label for="title">{{Helper::uc('title')}}</label>
+              <input type="text" class="form-control" id="title" name="title" placeholder="title" required>
+            </div>
+
               <div class="form-group">
                 <label for="project">{{Helper::uc('project')}}</label>
                 <select class="form-control" name="project_id" id="project_id" required>

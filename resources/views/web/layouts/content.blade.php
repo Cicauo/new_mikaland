@@ -18,7 +18,7 @@
 
     <body data-spy="scroll" data-target="#navmenu" data-offset="70">
 
-        @include('web.layouts.spinner')
+        {{-- @include('web.layouts.spinner') --}}
 
         @include('web.layouts.header')
 

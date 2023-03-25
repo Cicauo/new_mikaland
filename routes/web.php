@@ -32,6 +32,7 @@ use App\Http\Controllers\Admin\HomeContentController;
 use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\UsersCoverContentController;
 use App\Http\Controllers\Admin\UsersCoverController;
+use App\Http\Controllers\Admin\GaleryController;
 
 
 // MANAGEMENT CLASS
@@ -146,6 +147,15 @@ Route::middleware(['web'])->group(function () {
             Route::get('customer/destroy/{id}',[CustomerController::class, 'destroy']);
             Route::post('customer/store',[CustomerController::class, 'store']);
             Route::post('customer/update',[CustomerController::class, 'update']);    
+
+            //galery
+            Route::get('galery',[GaleryController::class, 'index']);
+            Route::get('galery/create',[GaleryController::class, 'create']);
+            Route::get('galery/show/{id}',[GaleryController::class, 'show']);
+            Route::get('galery/edit/{id}',[GaleryController::class, 'edit']);
+            Route::get('galery/destroy/{id}',[GaleryController::class, 'destroy']);
+            Route::post('galery/store',[GaleryController::class, 'store']);
+            Route::post('galery/update',[GaleryController::class, 'update']);    
 
             // Route Projects 
             Route::get('projects',[ProjectsController::class, 'index']);

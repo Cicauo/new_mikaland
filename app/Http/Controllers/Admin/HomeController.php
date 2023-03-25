@@ -11,6 +11,7 @@ use App\Models\Home;
 use App\Models\HomeContent;
 use Storage;
 use App\Models\Artikel;
+use App\Models\Galery;
 
 class HomeController extends Controller
 {

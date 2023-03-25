@@ -48,6 +48,13 @@
           </a>
         </li>
 
+        <li class="nav-item @if($link=='galery') active @endif">
+          <a class="nav-link" href="{{url('admin/galery')}}">
+            <i class="menu-icon mdi  mdi-view-dashboard"></i>
+            <span class="menu-title">galery</span>
+          </a>
+        </li>
+
         <li class="nav-item @if($link=='contact') active @endif">
           <a class="nav-link" href="{{url('admin/contact')}}">
             <i class="menu-icon mdi  mdi-view-dashboard"></i>

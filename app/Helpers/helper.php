@@ -30,6 +30,12 @@ class Helper {
         return $data;
     }
 
+    public static function galery(){
+        $data = DB::table('galery')->get();
+
+        return $data;
+    }
+
     public static function blog_category(){
         $data = DB::table('artikel_category')->get();
 

@@ -30,7 +30,7 @@
             </div>
             <div class="col-sm-6 padding-15">
                 <div class="project-single-content">
-                    <h2>{{$row->projects}} {{$row->name}}</h2>
+                    <h2>{{$row->home_title}}</h2>
                     <p>
                         @php
                             echo $row->content;

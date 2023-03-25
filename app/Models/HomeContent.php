@@ -51,7 +51,7 @@ class HomeContent extends Model
     public static function listData($id){
         $data = HomeContent::join('home','home_content.home_id','=','home.id')
                 ->where('home.id',$id)
-                ->select('home.name as home','home_content.*')
+                ->select('home.name as home','home.title as home_title','home_content.*')
                 ->orderBy('home_content.created_at','desc')
                 ->get();
 
@@ -61,7 +61,7 @@ class HomeContent extends Model
     public static function detailData($id){
         $data = HomeContent::leftJoin('home','home_content.home_id','=','home.id')
                 ->where('home_content.id',$id)
-                ->select('home.name as home','home_content.*')
+                ->select('home.name as home','home.title as home_title','home_content.*')
                 ->first();
 
         return $data;
@@ -132,7 +132,7 @@ class HomeContent extends Model
         $data = HomeContent::leftJoin('home','home_content.home_id','=','home.id')
                 ->where('home.id',$id)
                 ->where('home_content.type',$type)
-                ->select('home.name as home','home.content','home_content.*')
+                ->select('home.name as home','home.title as home_title','home.content','home_content.*')
                 ->get();
 
         return $data;
@@ -142,7 +142,7 @@ class HomeContent extends Model
         $data = HomeContent::leftJoin('home','home_content.home_id','=','home.id')
                 ->leftJoin('projects','home.project_id','=','projects.id')
                 ->where('home.id',$id)
-                ->select('home.name as home','home_content.*','projects.name as projects','projects.id as project_id')
+                ->select('home.name as home','home.title as home_title','home_content.*','projects.name as projects','projects.id as project_id')
                 ->first();
 
         return $data;
@@ -152,7 +152,7 @@ class HomeContent extends Model
         $data = HomeContent::leftJoin('home','home_content.home_id','=','home.id')
                 ->leftJoin('projects','home.project_id','=','projects.id')
                 ->where('home.id',$id)
-                ->select('home.name as home','home_content.*','projects.name as projects','home.content')
+                ->select('home.name as home','home.title as home_title','home_content.*','projects.name as projects','home.content')
                 ->first();
 
         return $data;

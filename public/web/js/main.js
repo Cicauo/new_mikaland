@@ -158,7 +158,7 @@
     });
 
 
-    $('#promo').owlCarousel({
+    $('.promo').owlCarousel({
         margin:10,
         loop:true,
         autoWidth:true,
@@ -176,7 +176,7 @@
                 items: 1,
             },
             992 : {
-                items: 2,
+                items: 1,
             }
         }
     })

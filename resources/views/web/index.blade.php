@@ -118,7 +118,7 @@
                    <span>Promo</span>
                    <h2>Promo Sales</h2>
                 </div><!--/.section-heading-->
-                <div id="promo" class="projects-carousel owl-carousel">
+                <div id="promo" class="promo owl-carousel">
                     @foreach($promo as $promos)
                     <div class="project-item">
                         <img src="{{url('storage/'.$promos->image)}}" style="height:350px;wight:100%" alt="projects">
